@@ -1,5 +1,5 @@
 """
-VoiceStudio MCP Server — expose voice synthesis as AI-agent tools.
+EliVoice MCP Server — expose music generation, voice synthesis, cloning, and dubbing as AI-agent tools.
 
 Run standalone:
     python -m backend.mcp_server          # stdio transport (Claude Desktop)
@@ -194,13 +194,13 @@ def _raise_for_backend_status(response) -> None:
                 phrase = ""
             raise httpx.HTTPStatusError(
                 _public_error_text(
-                    f"VoiceStudio returned HTTP {response.status_code} {phrase} for "
+                    f"EliVoice returned HTTP {response.status_code} {phrase} for "
                     f"{response.request.method} {response.request.url.path}"
                 ), request=error.request, response=error.response,
             ) from None
 
     raise httpx.HTTPStatusError(
-        f"VoiceStudio returned HTTP {response.status_code} for "
+        f"EliVoice returned HTTP {response.status_code} for "
         f"{response.request.method} {response.request.url.path}: {detail}",
         request=response.request,
         response=response,
@@ -902,7 +902,7 @@ def create_mcp_server(app=None):
         return decoded
 
     def _request_failure(exc: Exception) -> str:
-        return json.dumps({"error": f"VoiceStudio backend request failed: {exc}"})
+        return json.dumps({"error": f"EliVoice backend request failed: {exc}"})
 
     # ── Tools ───────────────────────────────────────────────────────────
 
@@ -1084,7 +1084,7 @@ def create_mcp_server(app=None):
 
     @mcp.tool()
     async def check_health() -> str:
-        """Check if the VoiceStudio backend is running and what GPU device is active."""
+        """Check if the EliVoice backend is running and what GPU device is active."""
         info = await _api_get("/health")
         return json.dumps(info)
 
@@ -1348,6 +1348,49 @@ def create_mcp_server(app=None):
         return json.dumps(result)
 
     @mcp.tool()
+    async def stop_music_studio() -> str:
+        """Stop the local Music Studio (ACE-Step 1.5) sidecar server to free GPU VRAM."""
+        result = await _submit_json("/api/music/sidecar/stop", {})
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def format_music_lyrics(
+        prompt: str = "",
+        lyrics: str = "",
+        vocal_language: str = "pt",
+        bpm: int | None = None,
+        duration: float | None = None,
+    ) -> str:
+        """Structure and refine song prompt, lyrics, BPM, and vocal language before music generation."""
+        payload: dict = {
+            "prompt": prompt,
+            "lyrics": lyrics,
+            "vocal_language": vocal_language or "pt",
+        }
+        if bpm is not None:
+            payload["bpm"] = int(bpm)
+        if duration is not None:
+            payload["duration"] = float(duration)
+        result = await _submit_json("/api/music/format-lyrics", payload)
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def remaster_music(audio_url: str) -> str:
+        """Apply mastering polish to a generated EliVoice music track URL."""
+        result = await _submit_json("/api/music/remaster", {"audio_url": audio_url})
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def analyze_music(src_audio_path: str) -> str:
+        """Analyze a local audio file under OMNIVOICE_MCP_BASE_PATH for style prompt, lyrics, BPM, and vocal language."""
+        try:
+            resolved = _resolve_under_base(src_audio_path)
+        except ValueError as err:
+            return json.dumps({"error": str(err)})
+        result = await _submit_json("/api/music/analyze", {"src_audio_path": resolved})
+        return json.dumps(result)
+
+    @mcp.tool()
     async def list_projects() -> str:
         """List saved EliVoice dubbing projects."""
         projects = await _api_get("/projects")
@@ -1431,7 +1474,7 @@ def mount_mcp(app) -> bool:
 # ── CLI entrypoint ──────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="VoiceStudio MCP Server")
+    parser = argparse.ArgumentParser(description="EliVoice MCP Server")
     parser.add_argument(
         "--sse", action="store_true",
         help="Use SSE transport instead of stdio (for remote agents)",
