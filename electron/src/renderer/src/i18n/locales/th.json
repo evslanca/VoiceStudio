@@ -2968,7 +2968,7 @@
     "title": "การเชื่อมต่อ",
     "featured": "แนะนำ",
     "n8nHint": "นำเข้าเวิร์กโฟลว์นี้ใน n8n แก้ไขคำขอแล้วเรียกใช้ เปิด VoiceStudio ไว้ Docker และ n8n ระยะไกลต้องใช้ที่อยู่แบ็กเอนด์ที่เข้าถึงได้และข้อมูลรับรองที่จำเป็น",
-    "worksWith": "ใช้งานร่วมกับ VoiceStudio ได้",
+    "worksWith": "ใช้งานได้กับ EliVoice",
     "externalHint": "เปิดเว็บไซต์ของผู้ให้บริการ VoiceStudio ไม่มีการตั้งค่าในตัวสำหรับรายการนี้",
     "setupTitle": "ตั้งค่า {{name}}",
     "setupUnavailable": "ไม่มีการตั้งค่าสำหรับที่อยู่แบ็กเอนด์ปัจจุบัน โปรดตรวจสอบ URL แบ็กเอนด์ในการตั้งค่า",
@@ -2985,7 +2985,9 @@
       "workflow": "เทมเพลตเวิร์กโฟลว์",
       "selfHost": "โฮสต์เอง",
       "localLlm": "โมเดลภาษาในเครื่อง",
-      "phoneCalls": "โทรศัพท์"
+      "phoneCalls": "โทรศัพท์",
+      "musicApi": "API เพลง",
+      "dubbingApi": "API พากย์เสียง"
     },
     "block": {
       "clientConfig": "การกำหนดค่าไคลเอนต์",
@@ -2998,7 +3000,9 @@
       "dockerRun": "รันคอนเทนเนอร์",
       "dockerCompose": "Docker Compose",
       "workflow": "เวิร์กโฟลว์ n8n",
-      "dockerRunPowerShell": "รันคอนเทนเนอร์ (Windows PowerShell)"
+      "dockerRunPowerShell": "รันคอนเทนเนอร์ (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "แบ็กเอนด์นี้อยู่ระยะไกล ให้ตั้งค่า OMNIVOICE_API_KEY ในเชลล์เป็นคีย์ API ของแบ็กเอนด์ ตัวอย่างจะอ่านคีย์จากที่นั่นและไม่มีคีย์อยู่ในตัว",
     "apiInsecureHint": "คีย์ API ต้องใช้ https:// กับแบ็กเอนด์ระยะไกล ให้วางแบ็กเอนด์นี้หลัง https (เช่น Tailscale Serve) ก่อนใช้คีย์",
@@ -3023,7 +3027,8 @@
       "container": "เรียกใช้ VoiceStudio เป็นเซิร์ฟเวอร์ที่โฮสต์เองพร้อม API และเอนด์พอยต์ MCP",
       "openaiAgents": "ให้ไปป์ไลน์เสียงของ OpenAI Agents SDK แปลงเสียงเป็นข้อความและข้อความเป็นเสียงภายในเครื่อง",
       "twilio": "โทรออกและรับสายด้วยเสียงของคุณเอง",
-      "n8n": "สร้างเสียงพูดจากเวิร์กโฟลว์ n8n ด้วยเวิร์กโฟลว์สำเร็จรูป"
+      "n8n": "สร้างเสียงพูดจากเวิร์กโฟลว์ n8n ด้วยเวิร์กโฟลว์สำเร็จรูป",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "สถานะและรายละเอียด",
     "voiceBindings": "กำหนดเสียงเฉพาะให้แต่ละไคลเอนต์ในการตั้งค่า"

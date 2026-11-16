@@ -28,15 +28,16 @@ it('only lists integrations with completed wiring pages', () => {
     (heading) => heading.textContent,
   );
   expect(names.sort()).toEqual([
+    'ACE-Step 1.5',
     'Claude Code',
     'Codex CLI',
     'Cursor',
     'Docker',
+    'EliVoice API',
     'GitHub Container Registry',
     'Model Context Protocol',
     'OpenAI Agents',
     'Twilio',
-    'VoiceStudio API',
     'n8n',
   ]);
   expect(container.textContent).not.toContain('Zapier');
@@ -76,6 +77,8 @@ it('badges every listed integration as working with VoiceStudio', () => {
   expect(card('Codex CLI')).toHaveTextContent('integrationCatalog.capability.mcp');
   expect(card('Twilio')).toHaveTextContent('integrationCatalog.worksWith');
   expect(card('Twilio')).toHaveTextContent('integrationCatalog.capability.phoneCalls');
+  expect(card('EliVoice API')).toHaveTextContent('integrationCatalog.capability.musicApi');
+  expect(card('ACE-Step 1.5')).toHaveTextContent('integrationCatalog.capability.musicApi');
   expect(container.textContent).not.toContain('directoryExamples.example');
 });
 

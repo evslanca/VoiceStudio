@@ -2968,7 +2968,7 @@
     "title": "Integraties",
     "featured": "Uitgelicht",
     "n8nHint": "Importeer deze workflow in n8n, bewerk het verzoek en voer hem uit. Laat VoiceStudio draaien. Docker en externe n8n-instanties hebben een bereikbaar backendadres en eventuele inloggegevens nodig.",
-    "worksWith": "Werkt met VoiceStudio",
+    "worksWith": "Werkt met EliVoice",
     "externalHint": "Opent de website van de aanbieder. VoiceStudio heeft geen ingebouwde configuratie voor dit item.",
     "setupTitle": "{{name}} instellen",
     "setupUnavailable": "Configuratie is niet beschikbaar voor het huidige backendadres. Controleer de backend-URL in Instellingen.",
@@ -2985,7 +2985,9 @@
       "workflow": "Workflowsjabloon",
       "selfHost": "Zelf gehost",
       "localLlm": "Lokaal taalmodel",
-      "phoneCalls": "Telefoongesprekken"
+      "phoneCalls": "Telefoongesprekken",
+      "musicApi": "Muziek-API",
+      "dubbingApi": "Nasynchronisatie-API"
     },
     "block": {
       "clientConfig": "Clientconfiguratie",
@@ -2998,7 +3000,9 @@
       "dockerRun": "Container starten",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n-workflow",
-      "dockerRunPowerShell": "Container starten (Windows PowerShell)"
+      "dockerRunPowerShell": "Container starten (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "Deze backend is extern: stel OMNIVOICE_API_KEY in je shell in op de API-sleutel. De voorbeelden lezen hem daaruit en bevatten hem nooit.",
     "apiInsecureHint": "API-sleutels vereisen https:// bij een externe backend. Zet deze backend achter https (bijvoorbeeld Tailscale Serve) voordat je een sleutel gebruikt.",
@@ -3023,7 +3027,8 @@
       "container": "Draai VoiceStudio als zelfgehoste server met de API en het MCP-endpoint.",
       "openaiAgents": "Geef een spraakpipeline van OpenAI Agents SDK lokale spraak-naar-tekst en tekst-naar-spraak.",
       "twilio": "Bel en beantwoord telefoongesprekken met je eigen stem.",
-      "n8n": "Genereer spraak vanuit n8n-workflows met een kant-en-klare workflow."
+      "n8n": "Genereer spraak vanuit n8n-workflows met een kant-en-klare workflow.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Status en details",
     "voiceBindings": "Geef elke client een eigen stem in Instellingen"

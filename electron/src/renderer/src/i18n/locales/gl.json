@@ -2968,7 +2968,7 @@
     "title": "Integracións",
     "featured": "Destacado",
     "n8nHint": "Importa este fluxo de traballo a n8n, edita a solicitude e execútaa. Mantén VoiceStudio funcionando. Docker e n8n remoto necesitan un enderezo de backend accesible e as credenciais necesarias.",
-    "worksWith": "Funciona con VoiceStudio",
+    "worksWith": "Funciona con EliVoice",
     "externalHint": "Abre o sitio web do provedor. VoiceStudio non ten ningunha configuración integrada para esta entrada.",
     "setupTitle": "Configurar {{name}}",
     "setupUnavailable": "A configuración non está dispoñible para o enderezo do backend actual. Comprobe o URL do backend en Configuración.",
@@ -2985,7 +2985,9 @@
       "workflow": "Modelo de fluxo de traballo",
       "selfHost": "Autoaloxado",
       "localLlm": "Modelo de lingua local",
-      "phoneCalls": "Chamadas telefónicas"
+      "phoneCalls": "Chamadas telefónicas",
+      "musicApi": "API de música",
+      "dubbingApi": "API de dobraxe"
     },
     "block": {
       "clientConfig": "Configuración do cliente",
@@ -2998,7 +3000,9 @@
       "dockerRun": "Executar o recipiente",
       "dockerCompose": "Docker Compose",
       "workflow": "fluxo de traballo n8n",
-      "dockerRunPowerShell": "Executar o contedor (Windows PowerShell)"
+      "dockerRunPowerShell": "Executar o contedor (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "Este backend é remoto: establece OmniVoice_API_KEY no teu shell na súa clave API. Os fragmentos leno desde alí e nunca o conteñen.",
     "apiInsecureHint": "As claves da API necesitan https:// nun backend remoto. Pon este backend detrás de https (por exemplo Tailscale Serve) antes de usar unha clave.",
@@ -3023,7 +3027,8 @@
       "container": "Executa VoiceStudio como un servidor autoaloxado coa súa API e o seu punto final MCP.",
       "openaiAgents": "Ofrécelle un canal de voz de OpenAI Agents SDK de voz a texto e texto a voz local.",
       "twilio": "Fai e responde chamadas de teléfono coa túa propia voz.",
-      "n8n": "Xera voz a partir de fluxos de traballo n8n cun fluxo de traballo preparado."
+      "n8n": "Xera voz a partir de fluxos de traballo n8n cun fluxo de traballo preparado.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Estado e detalles",
     "voiceBindings": "Dálle a cada cliente a súa propia voz en Configuración"

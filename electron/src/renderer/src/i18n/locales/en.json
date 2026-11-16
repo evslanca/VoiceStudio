@@ -2968,7 +2968,7 @@
     "title": "Integrations",
     "featured": "Featured",
     "n8nHint": "Import this workflow into n8n, edit the request, and run it. Keep VoiceStudio running. Docker and remote n8n need a reachable backend address and any required credentials.",
-    "worksWith": "Works with VoiceStudio",
+    "worksWith": "Works with EliVoice",
     "externalHint": "Opens the provider's website. VoiceStudio has no built-in setup for this entry.",
     "setupTitle": "Set up {{name}}",
     "setupUnavailable": "Setup is unavailable for the current backend address. Check the backend URL in Settings.",
@@ -2985,7 +2985,9 @@
       "workflow": "Workflow template",
       "selfHost": "Self-hosted",
       "localLlm": "Local language model",
-      "phoneCalls": "Phone calls"
+      "phoneCalls": "Phone calls",
+      "musicApi": "Music API",
+      "dubbingApi": "Dubbing API"
     },
     "block": {
       "clientConfig": "Client configuration",
@@ -2998,7 +3000,9 @@
       "dockerRun": "Run the container",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n workflow",
-      "dockerRunPowerShell": "Run the container (Windows PowerShell)"
+      "dockerRunPowerShell": "Run the container (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "This backend is remote: set OMNIVOICE_API_KEY in your shell to its API key. The snippets read it from there and never contain it.",
     "apiInsecureHint": "API keys need https:// on a remote backend. Put this backend behind https (for example Tailscale Serve) before using a key.",
@@ -3023,7 +3027,8 @@
       "container": "Run VoiceStudio as a self-hosted server with its API and MCP endpoint.",
       "openaiAgents": "Give an OpenAI Agents SDK voice pipeline local speech-to-text and text-to-speech.",
       "twilio": "Make and answer phone calls in your own voice.",
-      "n8n": "Generate speech from n8n workflows with a ready-made workflow."
+      "n8n": "Generate speech from n8n workflows with a ready-made workflow.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Status and details",
     "voiceBindings": "Give each client its own voice in Settings"

@@ -2970,7 +2970,7 @@
     "title": "Intégrations",
     "featured": "À la une",
     "n8nHint": "Importez ce workflow dans n8n, modifiez la requête et exécutez-le. Gardez VoiceStudio ouvert. Docker et les instances n8n distantes nécessitent une adresse de backend accessible et les identifiants requis.",
-    "worksWith": "Fonctionne avec VoiceStudio",
+    "worksWith": "Fonctionne avec EliVoice",
     "externalHint": "Ouvre le site du fournisseur. VoiceStudio n'a pas de configuration intégrée pour cette entrée.",
     "setupTitle": "Configurer {{name}}",
     "setupUnavailable": "La configuration n'est pas disponible pour l'adresse actuelle du backend. Vérifiez l'URL du backend dans les réglages.",
@@ -2987,7 +2987,9 @@
       "workflow": "Modèle de workflow",
       "selfHost": "Auto-hébergé",
       "localLlm": "Modèle de langage local",
-      "phoneCalls": "Appels téléphoniques"
+      "phoneCalls": "Appels téléphoniques",
+      "musicApi": "API musicale",
+      "dubbingApi": "API de doublage"
     },
     "block": {
       "clientConfig": "Configuration du client",
@@ -3000,7 +3002,9 @@
       "dockerRun": "Lancer le conteneur",
       "dockerCompose": "Docker Compose",
       "workflow": "Workflow n8n",
-      "dockerRunPowerShell": "Lancer le conteneur (Windows PowerShell)"
+      "dockerRunPowerShell": "Lancer le conteneur (Windows PowerShell)",
+      "musicCurl": "Générer de la musique (curl)",
+      "dubbingCurl": "Projets de doublage (curl)"
     },
     "apiBearerHint": "Ce backend est distant : définissez OMNIVOICE_API_KEY dans votre shell avec sa clé API. Les exemples la lisent depuis là et ne la contiennent jamais.",
     "apiInsecureHint": "Les clés API exigent https:// sur un backend distant. Placez ce backend derrière https (par exemple Tailscale Serve) avant d'utiliser une clé.",
@@ -3025,7 +3029,8 @@
       "container": "Exécutez VoiceStudio comme serveur auto-hébergé avec son API et son endpoint MCP.",
       "openaiAgents": "Dotez un pipeline vocal OpenAI Agents SDK de la reconnaissance et de la synthèse vocales locales.",
       "twilio": "Passez et recevez des appels téléphoniques avec votre propre voix.",
-      "n8n": "Générez de la parole depuis des workflows n8n grâce à un workflow prêt à l'emploi."
+      "n8n": "Générez de la parole depuis des workflows n8n grâce à un workflow prêt à l'emploi.",
+      "musicEngine": "Générez localement des morceaux complets avec chant ou instrumentaux grâce à ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "État et détails",
     "voiceBindings": "Attribuez à chaque client sa propre voix dans les Paramètres"

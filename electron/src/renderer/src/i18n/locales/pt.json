@@ -2970,7 +2970,7 @@
     "title": "Integrações",
     "featured": "Destaque",
     "n8nHint": "Importe este fluxo no n8n, edite a solicitação e execute-o. Mantenha o VoiceStudio aberto. Docker e n8n remoto precisam de um endereço de backend acessível e das credenciais necessárias.",
-    "worksWith": "Funciona com o VoiceStudio",
+    "worksWith": "Funciona com o EliVoice",
     "externalHint": "Abre o site do fornecedor. O VoiceStudio não tem configuração integrada para esta entrada.",
     "setupTitle": "Configurar {{name}}",
     "setupUnavailable": "A configuração não está disponível para o endereço atual do backend. Verifique o URL do backend nas Definições.",
@@ -2987,7 +2987,9 @@
       "workflow": "Modelo de fluxo",
       "selfHost": "Auto-hospedado",
       "localLlm": "Modelo de linguagem local",
-      "phoneCalls": "Chamadas telefônicas"
+      "phoneCalls": "Chamadas telefônicas",
+      "musicApi": "API de música",
+      "dubbingApi": "API de dublagem"
     },
     "block": {
       "clientConfig": "Configuração do cliente",
@@ -3000,7 +3002,9 @@
       "dockerRun": "Executar o contentor",
       "dockerCompose": "Docker Compose",
       "workflow": "Fluxo do n8n",
-      "dockerRunPowerShell": "Executar o contentor (Windows PowerShell)"
+      "dockerRunPowerShell": "Executar o contentor (Windows PowerShell)",
+      "musicCurl": "Gerar música (curl)",
+      "dubbingCurl": "Projetos de dublagem (curl)"
     },
     "apiBearerHint": "Este backend é remoto: defina OMNIVOICE_API_KEY na shell com a respetiva chave de API. Os exemplos leem-na daí e nunca a contêm.",
     "apiInsecureHint": "As chaves de API exigem https:// num backend remoto. Coloque este backend atrás de https (por exemplo, Tailscale Serve) antes de usar uma chave.",
@@ -3025,7 +3029,8 @@
       "container": "Execute o VoiceStudio como servidor auto-hospedado com sua API e endpoint MCP.",
       "openaiAgents": "Dê a um pipeline de voz do OpenAI Agents SDK conversão local de fala em texto e de texto em fala.",
       "twilio": "Faça e atenda chamadas telefônicas com sua própria voz.",
-      "n8n": "Gere fala a partir de workflows do n8n com um workflow pronto."
+      "n8n": "Gere fala a partir de workflows do n8n com um workflow pronto.",
+      "musicEngine": "Gere músicas completas com voz ou instrumental localmente com ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Status e detalhes",
     "voiceBindings": "Dê a cada cliente sua própria voz em Configurações"

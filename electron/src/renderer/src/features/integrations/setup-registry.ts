@@ -24,6 +24,8 @@ export type IntegrationCapability =
   | 'mcp'
   | 'speechApi'
   | 'transcriptionApi'
+  | 'musicApi'
+  | 'dubbingApi'
   | 'workflow'
   | 'selfHost'
   | 'localLlm'
@@ -68,7 +70,7 @@ export interface IntegrationSetup {
   panel?: ComponentType<IntegrationPanelProps>;
 }
 
-const REPO_DOCS = 'https://github.com/debpalash/VoiceStudio/blob/main/docs';
+const REPO_DOCS = 'https://github.com/evslanca/VoiceStudio/blob/main/docs';
 const DOCKER_HUB_IMAGE = 'palashdeb/omnivoice-studio';
 const GHCR_IMAGE = 'ghcr.io/debpalash/voicestudio';
 // Published images keep this stable even when a desktop build chooses another local default.
@@ -154,7 +156,7 @@ function dockerCompose(image: string) {
 
 function container(image: string, docs: string): IntegrationSetup {
   return {
-    capabilities: ['selfHost', 'speechApi', 'transcriptionApi', 'mcp'],
+    capabilities: ['selfHost', 'speechApi', 'transcriptionApi', 'musicApi', 'dubbingApi', 'mcp'],
     taglineKey: 'integrationCatalog.tagline.container',
     docs,
     blocks: () => [
@@ -240,8 +242,8 @@ export const INTEGRATION_SETUPS: Record<string, IntegrationSetup> = {
       ];
     },
   },
-  'voicestudio-api': {
-    capabilities: ['speechApi', 'transcriptionApi'],
+  'elivoice-api': {
+    capabilities: ['speechApi', 'transcriptionApi', 'musicApi', 'dubbingApi'],
     taglineKey: 'integrationCatalog.tagline.api',
     docs: `${REPO_DOCS}/api-auth.md`,
     blocks: (baseUrl) => {
@@ -291,6 +293,24 @@ export const INTEGRATION_SETUPS: Record<string, IntegrationSetup> = {
             '  -F model=whisper-1',
             '',
           ].join('\n'),
+        },
+        {
+          id: 'music',
+          titleKey: 'integrationCatalog.block.musicCurl',
+          language: 'shell',
+          text: [
+            `curl -X POST ${base}/api/music/generate \\`,
+            ...auth,
+            '  -H "Content-Type: application/json" \\',
+            '  -d \'{"prompt":"bossa nova acústica","lyrics":"[verse]\\nOlha que dia lindo","vocal_language":"pt","vocal_gender":"female","duration":90,"bpm":112}\'',
+            '',
+          ].join('\n'),
+        },
+        {
+          id: 'dubbing',
+          titleKey: 'integrationCatalog.block.dubbingCurl',
+          language: 'shell',
+          text: [`curl ${base}/projects`, ''].join('\n'),
         },
         {
           id: 'python',
@@ -355,8 +375,34 @@ export const INTEGRATION_SETUPS: Record<string, IntegrationSetup> = {
     blocks: () => [],
     panel: TwilioSetup,
   },
+  'ace-step-1-5': {
+    capabilities: ['musicApi', 'selfHost'],
+    taglineKey: 'integrationCatalog.tagline.musicEngine',
+    docs: 'https://github.com/ace-step/ACE-Step-1.5',
+    blocks: (baseUrl) => {
+      const base = backendEndpoint(baseUrl, '');
+      if (!base) return null;
+      const policy = remoteAuth(baseUrl);
+      const auth =
+        policy === 'bearer' ? ['  -H "Authorization: Bearer $OMNIVOICE_API_KEY" \\'] : [];
+      return [
+        {
+          id: 'music-generate',
+          titleKey: 'integrationCatalog.block.musicCurl',
+          language: 'shell',
+          text: [
+            `curl -X POST ${base}/api/music/generate \\`,
+            ...auth,
+            '  -H "Content-Type: application/json" \\',
+            '  -d \'{"prompt":"MPB violão e voz suave","lyrics":"[verse]\\nCanto novo no ar","vocal_language":"pt","vocal_gender":"auto","duration":120}\'',
+            '',
+          ].join('\n'),
+        },
+      ];
+    },
+  },
   n8n: {
-    capabilities: ['workflow', 'speechApi'],
+    capabilities: ['workflow', 'speechApi', 'musicApi'],
     taglineKey: 'integrationCatalog.tagline.n8n',
     docs: `${REPO_DOCS}/integrations/n8n.md`,
     blocks: (baseUrl) => {

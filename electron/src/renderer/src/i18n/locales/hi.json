@@ -2968,7 +2968,7 @@
     "title": "इंटीग्रेशन",
     "featured": "विशेष",
     "n8nHint": "यह वर्कफ़्लो n8n में आयात करें, अनुरोध संपादित करें और चलाएँ। VoiceStudio चालू रखें। Docker और रिमोट n8n के लिए पहुँच योग्य बैकएंड पता और आवश्यक क्रेडेंशियल चाहिए।",
-    "worksWith": "VoiceStudio के साथ काम करता है",
+    "worksWith": "EliVoice के साथ काम करता है",
     "externalHint": "प्रदाता की वेबसाइट खोलता है। इस प्रविष्टि के लिए VoiceStudio में कोई अंतर्निहित सेटअप नहीं है।",
     "setupTitle": "{{name}} सेट अप करें",
     "setupUnavailable": "मौजूदा बैकएंड पते के लिए सेटअप उपलब्ध नहीं है। सेटिंग्स में बैकएंड URL जाँचें।",
@@ -2985,7 +2985,9 @@
       "workflow": "वर्कफ़्लो टेम्पलेट",
       "selfHost": "सेल्फ़-होस्टेड",
       "localLlm": "लोकल भाषा मॉडल",
-      "phoneCalls": "फ़ोन कॉल"
+      "phoneCalls": "फ़ोन कॉल",
+      "musicApi": "संगीत API",
+      "dubbingApi": "डबिंग API"
     },
     "block": {
       "clientConfig": "क्लाइंट कॉन्फ़िगरेशन",
@@ -2998,7 +3000,9 @@
       "dockerRun": "कंटेनर चलाएँ",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n वर्कफ़्लो",
-      "dockerRunPowerShell": "कंटेनर चलाएँ (Windows PowerShell)"
+      "dockerRunPowerShell": "कंटेनर चलाएँ (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "यह बैकएंड दूरस्थ है: अपने शेल में OMNIVOICE_API_KEY को उसकी API कुंजी पर सेट करें। उदाहरण कुंजी वहीं से पढ़ते हैं और उसे कभी शामिल नहीं करते।",
     "apiInsecureHint": "दूरस्थ बैकएंड पर API कुंजियों के लिए https:// ज़रूरी है। कुंजी उपयोग करने से पहले इस बैकएंड को https (जैसे Tailscale Serve) के पीछे रखें।",
@@ -3023,7 +3027,8 @@
       "container": "VoiceStudio को उसके API और MCP एंडपॉइंट के साथ सेल्फ़-होस्टेड सर्वर के रूप में चलाएं।",
       "openaiAgents": "OpenAI Agents SDK वॉइस पाइपलाइन को लोकल स्पीच-टू-टेक्स्ट और टेक्स्ट-टू-स्पीच दें।",
       "twilio": "अपनी आवाज़ में फ़ोन कॉल करें और उनका जवाब दें।",
-      "n8n": "तैयार वर्कफ़्लो के साथ n8n वर्कफ़्लो से स्पीच बनाएं।"
+      "n8n": "तैयार वर्कफ़्लो के साथ n8n वर्कफ़्लो से स्पीच बनाएं।",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "स्थिति और विवरण",
     "voiceBindings": "सेटिंग्स में हर क्लाइंट को उसकी अपनी आवाज़ दें"

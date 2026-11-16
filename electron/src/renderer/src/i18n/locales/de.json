@@ -2968,7 +2968,7 @@
     "title": "Integrationen",
     "featured": "Hervorgehoben",
     "n8nHint": "Importiere diesen Workflow in n8n, bearbeite die Anfrage und führe ihn aus. Lass VoiceStudio laufen. Docker und entfernte n8n-Instanzen benötigen eine erreichbare Backend-Adresse und gegebenenfalls Zugangsdaten.",
-    "worksWith": "Funktioniert mit VoiceStudio",
+    "worksWith": "Funktioniert mit EliVoice",
     "externalHint": "Öffnet die Website des Anbieters. VoiceStudio bietet für diesen Eintrag keine integrierte Einrichtung.",
     "setupTitle": "{{name}} einrichten",
     "setupUnavailable": "Für die aktuelle Backend-Adresse ist keine Einrichtung verfügbar. Prüfe die Backend-URL in den Einstellungen.",
@@ -2985,7 +2985,9 @@
       "workflow": "Workflow-Vorlage",
       "selfHost": "Selbst gehostet",
       "localLlm": "Lokales Sprachmodell",
-      "phoneCalls": "Telefonanrufe"
+      "phoneCalls": "Telefonanrufe",
+      "musicApi": "Musik-API",
+      "dubbingApi": "Synchronisations-API"
     },
     "block": {
       "clientConfig": "Client-Konfiguration",
@@ -2998,7 +3000,9 @@
       "dockerRun": "Container starten",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n-Workflow",
-      "dockerRunPowerShell": "Container starten (Windows PowerShell)"
+      "dockerRunPowerShell": "Container starten (Windows PowerShell)",
+      "musicCurl": "Musik generieren (curl)",
+      "dubbingCurl": "Synchronisationsprojekte (curl)"
     },
     "apiBearerHint": "Dieses Backend ist entfernt: Setze OMNIVOICE_API_KEY in deiner Shell auf seinen API-Schlüssel. Die Beispiele lesen ihn von dort und enthalten ihn nie.",
     "apiInsecureHint": "API-Schlüssel brauchen bei einem entfernten Backend https://. Stelle dieses Backend hinter https (zum Beispiel Tailscale Serve), bevor du einen Schlüssel verwendest.",
@@ -3023,7 +3027,8 @@
       "container": "Betreibe VoiceStudio als selbst gehosteten Server mit API und MCP-Endpunkt.",
       "openaiAgents": "Gib einer Sprachpipeline im OpenAI Agents SDK lokale Spracherkennung und Sprachausgabe.",
       "twilio": "Tätige und beantworte Telefonanrufe mit deiner eigenen Stimme.",
-      "n8n": "Erzeuge Sprache aus n8n-Workflows mit einem fertigen Workflow."
+      "n8n": "Erzeuge Sprache aus n8n-Workflows mit einem fertigen Workflow.",
+      "musicEngine": "Erstellen Sie komplette Songs mit Gesang oder Instrumental lokal mit ACE-Step 1.5 über EliVoice."
     },
     "railLabel": "Status und Details",
     "voiceBindings": "Gib jedem Client in den Einstellungen eine eigene Stimme"

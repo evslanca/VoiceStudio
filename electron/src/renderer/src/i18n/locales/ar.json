@@ -3020,7 +3020,7 @@
     "title": "التكاملات",
     "featured": "مميّز",
     "n8nHint": "استورد سير العمل هذا إلى n8n، وعدّل الطلب ثم شغّله. أبقِ VoiceStudio قيد التشغيل. يحتاج Docker وn8n البعيد إلى عنوان خلفية يمكن الوصول إليه وبيانات الاعتماد المطلوبة.",
-    "worksWith": "يعمل مع VoiceStudio",
+    "worksWith": "يعمل مع EliVoice",
     "externalHint": "يفتح موقع المزوّد. لا يوفّر VoiceStudio إعدادًا مدمجًا لهذا الإدخال.",
     "setupTitle": "إعداد {{name}}",
     "setupUnavailable": "الإعداد غير متاح لعنوان الواجهة الخلفية الحالي. تحقّق من عنوان URL للواجهة الخلفية في الإعدادات.",
@@ -3037,7 +3037,9 @@
       "workflow": "قالب سير عمل",
       "selfHost": "استضافة ذاتية",
       "localLlm": "نموذج لغوي محلي",
-      "phoneCalls": "مكالمات هاتفية"
+      "phoneCalls": "مكالمات هاتفية",
+      "musicApi": "واجهة الموسيقى",
+      "dubbingApi": "واجهة الدبلجة"
     },
     "block": {
       "clientConfig": "إعداد العميل",
@@ -3050,7 +3052,9 @@
       "dockerRun": "تشغيل الحاوية",
       "dockerCompose": "Docker Compose",
       "workflow": "سير عمل n8n",
-      "dockerRunPowerShell": "تشغيل الحاوية (Windows PowerShell)"
+      "dockerRunPowerShell": "تشغيل الحاوية (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "هذه الواجهة الخلفية بعيدة: اضبط OMNIVOICE_API_KEY في الصدفة على مفتاح API الخاص بها. تقرأ الأمثلة المفتاح من هناك ولا تتضمنه أبدًا.",
     "apiInsecureHint": "تتطلب مفاتيح API استخدام https:// مع واجهة خلفية بعيدة. ضع هذه الواجهة خلف https (مثل Tailscale Serve) قبل استخدام مفتاح.",
@@ -3075,7 +3079,8 @@
       "container": "شغّل VoiceStudio كخادم مستضاف ذاتيًا مع واجهة API ونقطة نهاية MCP.",
       "openaiAgents": "امنح مسار الصوت في OpenAI Agents SDK تحويلًا محليًا للكلام إلى نص والنص إلى كلام.",
       "twilio": "أجرِ المكالمات الهاتفية وأجب عنها بصوتك.",
-      "n8n": "أنشئ كلامًا من سير عمل n8n باستخدام سير عمل جاهز."
+      "n8n": "أنشئ كلامًا من سير عمل n8n باستخدام سير عمل جاهز.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "الحالة والتفاصيل",
     "voiceBindings": "امنح كل عميل صوته الخاص في الإعدادات"

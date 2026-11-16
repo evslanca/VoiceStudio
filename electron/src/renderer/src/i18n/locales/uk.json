@@ -2994,7 +2994,7 @@
     "title": "Інтеграції",
     "featured": "Рекомендоване",
     "n8nHint": "Імпортуйте цей процес у n8n, змініть запит і запустіть його. Залиште VoiceStudio запущеним. Для Docker і віддаленого n8n потрібні доступна адреса бекенду та необхідні облікові дані.",
-    "worksWith": "Працює з VoiceStudio",
+    "worksWith": "Працює з EliVoice",
     "externalHint": "Відкриває сайт постачальника. Для цього запису у VoiceStudio немає вбудованого налаштування.",
     "setupTitle": "Налаштувати {{name}}",
     "setupUnavailable": "Налаштування недоступне для поточної адреси бекенда. Перевірте URL бекенда в налаштуваннях.",
@@ -3011,7 +3011,9 @@
       "workflow": "Шаблон сценарію",
       "selfHost": "Власний хостинг",
       "localLlm": "Локальна мовна модель",
-      "phoneCalls": "Телефонні дзвінки"
+      "phoneCalls": "Телефонні дзвінки",
+      "musicApi": "API музики",
+      "dubbingApi": "API дубляжу"
     },
     "block": {
       "clientConfig": "Конфігурація клієнта",
@@ -3024,7 +3026,9 @@
       "dockerRun": "Запуск контейнера",
       "dockerCompose": "Docker Compose",
       "workflow": "Сценарій n8n",
-      "dockerRunPowerShell": "Запуск контейнера (Windows PowerShell)"
+      "dockerRunPowerShell": "Запуск контейнера (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "Цей бекенд віддалений: задайте в оболонці OMNIVOICE_API_KEY з його API-ключем. Приклади читають ключ звідти й ніколи його не містять.",
     "apiInsecureHint": "Для віддаленого бекенда API-ключі потребують https://. Розмістіть бекенд за https (наприклад, Tailscale Serve), перш ніж використовувати ключ.",
@@ -3049,7 +3053,8 @@
       "container": "Запустіть VoiceStudio як власний сервер з API та ендпоінтом MCP.",
       "openaiAgents": "Надайте голосовому конвеєру OpenAI Agents SDK локальне розпізнавання й синтез мовлення.",
       "twilio": "Телефонуйте й відповідайте на дзвінки власним голосом.",
-      "n8n": "Генеруйте мовлення з робочих процесів n8n за допомогою готового workflow."
+      "n8n": "Генеруйте мовлення з робочих процесів n8n за допомогою готового workflow.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Стан і подробиці",
     "voiceBindings": "Призначте кожному клієнту власний голос у Налаштуваннях"

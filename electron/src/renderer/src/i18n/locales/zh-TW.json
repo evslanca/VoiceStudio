@@ -2968,7 +2968,7 @@
     "title": "整合",
     "featured": "精選",
     "n8nHint": "將此工作流程匯入 n8n，編輯請求後執行。請保持 VoiceStudio 執行。Docker 和遠端 n8n 需要可存取的後端位址及必要的認證資訊。",
-    "worksWith": "可與 VoiceStudio 搭配使用",
+    "worksWith": "適用於 EliVoice",
     "externalHint": "開啟供應商網站。VoiceStudio 沒有為此項目提供內建設定。",
     "setupTitle": "設定 {{name}}",
     "setupUnavailable": "目前的後端位址無法產生設定。請在設定中檢查後端 URL。",
@@ -2985,7 +2985,9 @@
       "workflow": "工作流程範本",
       "selfHost": "自行託管",
       "localLlm": "本機語言模型",
-      "phoneCalls": "電話通話"
+      "phoneCalls": "電話通話",
+      "musicApi": "音樂 API",
+      "dubbingApi": "配音 API"
     },
     "block": {
       "clientConfig": "用戶端設定",
@@ -2998,7 +3000,9 @@
       "dockerRun": "執行容器",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n 工作流程",
-      "dockerRunPowerShell": "執行容器（Windows PowerShell）"
+      "dockerRunPowerShell": "執行容器（Windows PowerShell）",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "此後端為遠端後端：請在 shell 中將 OMNIVOICE_API_KEY 設為其 API 金鑰。範例會從那裡讀取金鑰，且從不包含金鑰。",
     "apiInsecureHint": "遠端後端的 API 金鑰需要 https://。使用金鑰前，請將此後端置於 https 之後（例如 Tailscale Serve）。",
@@ -3023,7 +3027,8 @@
       "container": "將 VoiceStudio 作為自架伺服器執行，提供 API 和 MCP 端點。",
       "openaiAgents": "為 OpenAI Agents SDK 語音管線提供本機語音轉文字和文字轉語音。",
       "twilio": "用你自己的聲音撥打和接聽電話。",
-      "n8n": "透過現成的工作流程，從 n8n 工作流程產生語音。"
+      "n8n": "透過現成的工作流程，從 n8n 工作流程產生語音。",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "狀態與詳細資料",
     "voiceBindings": "在設定中為每個用戶端指定專屬語音"

@@ -2968,7 +2968,7 @@
     "title": "連携",
     "featured": "注目",
     "n8nHint": "このワークフローをn8nにインポートし、リクエストを編集して実行します。VoiceStudioは起動したままにしてください。Dockerやリモートのn8nには、接続可能なバックエンドのアドレスと必要な認証情報を設定してください。",
-    "worksWith": "VoiceStudio と連携",
+    "worksWith": "EliVoice で動作します",
     "externalHint": "提供元のウェブサイトを開きます。この項目には VoiceStudio の組み込み設定はありません。",
     "setupTitle": "{{name}} を設定",
     "setupUnavailable": "現在のバックエンドアドレスでは設定を利用できません。設定でバックエンド URL を確認してください。",
@@ -2985,7 +2985,9 @@
       "workflow": "ワークフローテンプレート",
       "selfHost": "セルフホスト",
       "localLlm": "ローカル言語モデル",
-      "phoneCalls": "電話通話"
+      "phoneCalls": "電話通話",
+      "musicApi": "音楽 API",
+      "dubbingApi": "吹替 API"
     },
     "block": {
       "clientConfig": "クライアント設定",
@@ -2998,7 +3000,9 @@
       "dockerRun": "コンテナを実行",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n ワークフロー",
-      "dockerRunPowerShell": "コンテナを実行 (Windows PowerShell)"
+      "dockerRunPowerShell": "コンテナを実行 (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "このバックエンドはリモートです。シェルで OMNIVOICE_API_KEY にその API キーを設定してください。サンプルはそこから読み取り、キー自体は含みません。",
     "apiInsecureHint": "リモートのバックエンドで API キーを使うには https:// が必要です。キーを使う前に、このバックエンドを https（例: Tailscale Serve）の背後に置いてください。",
@@ -3023,7 +3027,8 @@
       "container": "VoiceStudio を API と MCP エンドポイント付きのセルフホストサーバーとして実行します。",
       "openaiAgents": "OpenAI Agents SDK の音声パイプラインに、ローカルの音声認識と音声合成を提供します。",
       "twilio": "自分の声で電話をかけたり受けたりできます。",
-      "n8n": "すぐに使えるワークフローで、n8n ワークフローから音声を生成します。"
+      "n8n": "すぐに使えるワークフローで、n8n ワークフローから音声を生成します。",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "ステータスと詳細",
     "voiceBindings": "設定でクライアントごとに専用の音声を割り当てる"

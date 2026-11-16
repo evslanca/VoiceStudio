@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { afterEach, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
-import '@/i18n';
+import i18n from '@/i18n';
 import { IntegrationsPage } from './integrations-page';
 import { IntegrationDetailPage } from './integration-detail-page';
 
@@ -22,6 +22,9 @@ const bridge = vi.hoisted(() => ({ openExternal: vi.fn() }));
 vi.mock('@/components/bridge', () => ({
   getBridge: () => ({ files: { openExternal: bridge.openExternal } }),
 }));
+beforeEach(async () => {
+  await i18n.changeLanguage('en');
+});
 afterEach(() => {
   cleanup();
   vi.clearAllMocks();

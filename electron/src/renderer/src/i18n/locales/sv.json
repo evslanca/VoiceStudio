@@ -2968,7 +2968,7 @@
     "title": "Integrationer",
     "featured": "Utvald",
     "n8nHint": "Importera arbetsflödet till n8n, redigera begäran och kör det. Låt VoiceStudio vara igång. Docker och fjärranslutna n8n behöver en nåbar backendadress och eventuella inloggningsuppgifter.",
-    "worksWith": "Fungerar med VoiceStudio",
+    "worksWith": "Fungerar med EliVoice",
     "externalHint": "Öppnar leverantörens webbplats. VoiceStudio har ingen inbyggd konfiguration för den här posten.",
     "setupTitle": "Konfigurera {{name}}",
     "setupUnavailable": "Konfiguration är inte tillgänglig för den aktuella backendadressen. Kontrollera backend-URL:en i Inställningar.",
@@ -2985,7 +2985,9 @@
       "workflow": "Arbetsflödesmall",
       "selfHost": "Egen drift",
       "localLlm": "Lokal språkmodell",
-      "phoneCalls": "Telefonsamtal"
+      "phoneCalls": "Telefonsamtal",
+      "musicApi": "Musik-API",
+      "dubbingApi": "Dubbning-API"
     },
     "block": {
       "clientConfig": "Klientkonfiguration",
@@ -2998,7 +3000,9 @@
       "dockerRun": "Kör containern",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n-arbetsflöde",
-      "dockerRunPowerShell": "Kör containern (Windows PowerShell)"
+      "dockerRunPowerShell": "Kör containern (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "Den här backenden är fjärransluten: sätt OMNIVOICE_API_KEY i ditt skal till dess API-nyckel. Exemplen läser den därifrån och innehåller den aldrig.",
     "apiInsecureHint": "API-nycklar kräver https:// för en fjärrbackend. Placera backenden bakom https (till exempel Tailscale Serve) innan du använder en nyckel.",
@@ -3023,7 +3027,8 @@
       "container": "Kör VoiceStudio som en egen server med dess API och MCP-endpoint.",
       "openaiAgents": "Ge en röstpipeline i OpenAI Agents SDK lokal tal-till-text och text-till-tal.",
       "twilio": "Ring och besvara telefonsamtal med din egen röst.",
-      "n8n": "Generera tal från n8n-arbetsflöden med ett färdigt arbetsflöde."
+      "n8n": "Generera tal från n8n-arbetsflöden med ett färdigt arbetsflöde.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Status och detaljer",
     "voiceBindings": "Ge varje klient en egen röst i Inställningar"

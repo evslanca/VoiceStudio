@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
-import '@/i18n';
+import i18n from '@/i18n';
 import { IntegrationDetailPage } from './integration-detail-page';
 import { INTEGRATION_SETUPS } from './setup-registry';
 import en from '@/i18n/locales/en.json';
@@ -13,7 +13,8 @@ vi.mock('@shared/config/sponsors', () => ({
 const route = vi.hoisted(() => ({ slug: 'claude-code' }));
 const save = vi.hoisted(() => vi.fn());
 vi.mock('@/lib/local-export', () => ({ saveLocalFile: save }));
-beforeEach(() => {
+beforeEach(async () => {
+  await i18n.changeLanguage('en');
   route.slug = 'claude-code';
   vi.clearAllMocks();
 });
@@ -85,7 +86,7 @@ it('shows the Codex TOML export and one heading per panel', () => {
     '~/.codex/config.toml',
   );
   expect(screen.getByRole('heading', { name: 'Set up Codex CLI' })).toBeInTheDocument();
-  expect(screen.getByText('Works with VoiceStudio')).toBeInTheDocument();
+  expect(screen.getByText('Works with EliVoice')).toBeInTheDocument();
   expect(screen.queryByRole('heading', { name: 'Details' })).toBeNull();
 });
 
@@ -93,14 +94,14 @@ it('does not expose detail pages for entries without completed wiring', () => {
   route.slug = 'zapier';
   render(<IntegrationDetailPage />);
   expect(screen.queryByRole('button', { name: 'Copy' })).toBeNull();
-  expect(screen.queryByText('Works with VoiceStudio')).toBeNull();
+  expect(screen.queryByText('Works with EliVoice')).toBeNull();
   expect(screen.getByText('No matches')).toBeInTheDocument();
 });
 
 it('offers copyable API snippets for the current backend', () => {
-  route.slug = 'voicestudio-api';
+  route.slug = 'elivoice-api';
   render(<IntegrationDetailPage />);
-  expect(screen.getAllByRole('button', { name: 'Copy' })).toHaveLength(4);
+  expect(screen.getAllByRole('button', { name: 'Copy' })).toHaveLength(6);
   expect(
     screen.getByText(/curl http:\/\/127\.0\.0\.1:3912\/v1\/audio\/speech/),
   ).toBeInTheDocument();
@@ -112,7 +113,7 @@ it('shows the OpenAI Agents snippet for the live backend', async () => {
   Object.defineProperty(navigator, 'clipboard', { value: { writeText: copy }, configurable: true });
   render(<IntegrationDetailPage />);
   expect(screen.getByText(/Point the OpenAI Agents SDK voice pipeline/)).toBeInTheDocument();
-  expect(screen.getByText('Works with VoiceStudio')).toBeInTheDocument();
+  expect(screen.getByText('Works with EliVoice')).toBeInTheDocument();
   expect(screen.getByText('Local language model')).toBeInTheDocument();
   fireEvent.click(screen.getByRole('button', { name: 'Copy' }));
   await waitFor(() => expect(copy).toHaveBeenCalledTimes(1));
@@ -125,7 +126,7 @@ it('renders Twilio from the registry as a working connector with its setup panel
   render(<IntegrationDetailPage />);
   expect(screen.getByRole('heading', { name: 'Twilio', level: 2 })).toBeInTheDocument();
   expect(screen.getByText('Twilio phone setup panel')).toBeInTheDocument();
-  expect(screen.getByText('Works with VoiceStudio')).toBeInTheDocument();
+  expect(screen.getByText('Works with EliVoice')).toBeInTheDocument();
   expect(screen.getByText('Phone calls')).toBeInTheDocument();
   expect(screen.queryByText(/Directory examples only/)).toBeNull();
   expect(screen.queryByText(/Setup is unavailable/)).toBeNull();

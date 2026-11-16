@@ -81,8 +81,13 @@ export const VOICE_AI_DIRECTORY = [
     logoUrl: openaiLogo,
   },
   {
-    name: 'VoiceStudio API',
-    url: 'https://github.com/debpalash/VoiceStudio',
+    name: 'EliVoice API',
+    url: 'https://github.com/evslanca/VoiceStudio',
+    logoUrl: voiceStudioLogo,
+  },
+  {
+    name: 'ACE-Step 1.5',
+    url: 'https://github.com/ace-step/ACE-Step-1.5',
     logoUrl: voiceStudioLogo,
   },
 ];

@@ -2968,7 +2968,7 @@
     "title": "Entegrasyonlar",
     "featured": "Öne çıkan",
     "n8nHint": "Bu iş akışını n8n içine aktarın, isteği düzenleyip çalıştırın. VoiceStudio açık kalsın. Docker ve uzak n8n için erişilebilir bir arka uç adresi ve gerekli kimlik bilgileri gerekir.",
-    "worksWith": "VoiceStudio ile çalışır",
+    "worksWith": "EliVoice ile çalışır",
     "externalHint": "Sağlayıcının web sitesini açar. VoiceStudio'da bu giriş için yerleşik kurulum yok.",
     "setupTitle": "{{name}} kurulumu",
     "setupUnavailable": "Mevcut arka uç adresi için kurulum kullanılamıyor. Ayarlar'da arka uç URL'sini kontrol edin.",
@@ -2985,7 +2985,9 @@
       "workflow": "İş akışı şablonu",
       "selfHost": "Kendi sunucunuzda",
       "localLlm": "Yerel dil modeli",
-      "phoneCalls": "Telefon aramaları"
+      "phoneCalls": "Telefon aramaları",
+      "musicApi": "Müzik API",
+      "dubbingApi": "Dublaj API"
     },
     "block": {
       "clientConfig": "İstemci yapılandırması",
@@ -2998,7 +3000,9 @@
       "dockerRun": "Konteyneri çalıştır",
       "dockerCompose": "Docker Compose",
       "workflow": "n8n iş akışı",
-      "dockerRunPowerShell": "Konteyneri çalıştır (Windows PowerShell)"
+      "dockerRunPowerShell": "Konteyneri çalıştır (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "Bu arka uç uzakta: kabuğunuzda OMNIVOICE_API_KEY değerini API anahtarına ayarlayın. Örnekler anahtarı oradan okur ve asla içermez.",
     "apiInsecureHint": "Uzak bir arka uçta API anahtarları https:// gerektirir. Anahtar kullanmadan önce bu arka ucu https arkasına alın (örneğin Tailscale Serve).",
@@ -3023,7 +3027,8 @@
       "container": "VoiceStudio'yu API'si ve MCP uç noktasıyla kendi barındırdığınız bir sunucu olarak çalıştırın.",
       "openaiAgents": "Bir OpenAI Agents SDK ses hattına yerel konuşmadan metne ve metinden konuşmaya özelliği kazandırın.",
       "twilio": "Kendi sesinizle telefon aramaları yapın ve yanıtlayın.",
-      "n8n": "Hazır bir iş akışıyla n8n iş akışlarından konuşma üretin."
+      "n8n": "Hazır bir iş akışıyla n8n iş akışlarından konuşma üretin.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Durum ve ayrıntılar",
     "voiceBindings": "Ayarlar'da her istemciye kendi sesini verin"

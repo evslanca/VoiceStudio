@@ -2968,7 +2968,7 @@
     "title": "Integrasi",
     "featured": "Unggulan",
     "n8nHint": "Impor alur kerja ini ke n8n, edit permintaan, lalu jalankan. Biarkan VoiceStudio berjalan. Docker dan n8n jarak jauh memerlukan alamat backend yang dapat dijangkau serta kredensial yang diperlukan.",
-    "worksWith": "Berfungsi dengan VoiceStudio",
+    "worksWith": "Berfungsi dengan EliVoice",
     "externalHint": "Membuka situs penyedia. VoiceStudio tidak memiliki penyiapan bawaan untuk entri ini.",
     "setupTitle": "Siapkan {{name}}",
     "setupUnavailable": "Penyiapan tidak tersedia untuk alamat backend saat ini. Periksa URL backend di Pengaturan.",
@@ -2985,7 +2985,9 @@
       "workflow": "Templat alur kerja",
       "selfHost": "Hosting mandiri",
       "localLlm": "Model bahasa lokal",
-      "phoneCalls": "Panggilan telepon"
+      "phoneCalls": "Panggilan telepon",
+      "musicApi": "API Musik",
+      "dubbingApi": "API Sulih Suara"
     },
     "block": {
       "clientConfig": "Konfigurasi klien",
@@ -2998,7 +3000,9 @@
       "dockerRun": "Jalankan kontainer",
       "dockerCompose": "Docker Compose",
       "workflow": "Alur kerja n8n",
-      "dockerRunPowerShell": "Jalankan kontainer (Windows PowerShell)"
+      "dockerRunPowerShell": "Jalankan kontainer (Windows PowerShell)",
+      "musicCurl": "Generate music (curl)",
+      "dubbingCurl": "Dubbing projects (curl)"
     },
     "apiBearerHint": "Backend ini jarak jauh: atur OMNIVOICE_API_KEY di shell Anda ke kunci API-nya. Contoh membacanya dari sana dan tidak pernah memuatnya.",
     "apiInsecureHint": "Kunci API memerlukan https:// pada backend jarak jauh. Tempatkan backend ini di balik https (misalnya Tailscale Serve) sebelum memakai kunci.",
@@ -3023,7 +3027,8 @@
       "container": "Jalankan VoiceStudio sebagai server yang di-host sendiri dengan API dan endpoint MCP-nya.",
       "openaiAgents": "Berikan pipeline suara OpenAI Agents SDK kemampuan ucapan-ke-teks dan teks-ke-ucapan lokal.",
       "twilio": "Lakukan dan jawab panggilan telepon dengan suara Anda sendiri.",
-      "n8n": "Hasilkan ucapan dari workflow n8n dengan workflow siap pakai."
+      "n8n": "Hasilkan ucapan dari workflow n8n dengan workflow siap pakai.",
+      "musicEngine": "Generate full vocal or instrumental tracks locally with ACE-Step 1.5 via EliVoice."
     },
     "railLabel": "Status dan detail",
     "voiceBindings": "Beri setiap klien suaranya sendiri di Pengaturan"
