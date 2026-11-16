@@ -1651,13 +1651,13 @@
     "toast_flushed": "Очищено — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· модель ненавантажена",
     "toast_flush_failed": "Помилка очищення: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Розробка",
     "switch_to_light": "Переключитися на світлу тему",
     "switch_to_dark": "Переключитися на темну тему",
     "not_found_title": "Сторінку не знайдено",
-    "not_found_body": "Ця адреса не відповідає жодній сторінці VoiceStudio."
+    "not_found_body": "Ця адреса не відповідає жодній сторінці EliVoice."
   },
   "stories": {
     "title": "Редактор історій",

@@ -1637,13 +1637,13 @@
     "toast_flushed": "Spolat — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· modell avlastad",
     "toast_flush_failed": "Spolning misslyckades: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Utveckling",
     "switch_to_light": "Byt till ljustema",
     "switch_to_dark": "Byt till mörkt tema",
     "not_found_title": "Sidan hittades inte",
-    "not_found_body": "Den här adressen matchar ingen sida i VoiceStudio."
+    "not_found_body": "Den här adressen matchar ingen sida i EliVoice."
   },
   "stories": {
     "title": "Redaktör för berättelser",

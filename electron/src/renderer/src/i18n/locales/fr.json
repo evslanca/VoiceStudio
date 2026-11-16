@@ -1639,13 +1639,13 @@
     "toast_flushed": "Vidé — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· modèle déchargé",
     "toast_flush_failed": "Échec du rinçage : {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Développement",
     "switch_to_light": "Passer au thème clair",
     "switch_to_dark": "Passer au thème sombre",
     "not_found_title": "Page introuvable",
-    "not_found_body": "Cette adresse ne correspond à aucune page de VoiceStudio."
+    "not_found_body": "Cette adresse ne correspond à aucune page de EliVoice."
   },
   "stories": {
     "title": "Éditeur d'histoires",

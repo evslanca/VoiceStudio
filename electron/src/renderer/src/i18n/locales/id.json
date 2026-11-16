@@ -1637,13 +1637,13 @@
     "toast_flushed": "Dibilas — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· model dibongkar",
     "toast_flush_failed": "Gagal menyiram: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Pengembangan",
     "switch_to_light": "Beralih ke tema terang",
     "switch_to_dark": "Beralih ke tema gelap",
     "not_found_title": "Halaman tidak ditemukan",
-    "not_found_body": "Alamat ini tidak cocok dengan halaman mana pun di VoiceStudio."
+    "not_found_body": "Alamat ini tidak cocok dengan halaman mana pun di EliVoice."
   },
   "stories": {
     "title": "Editor Cerita",

@@ -1637,13 +1637,13 @@
     "toast_flushed": "Gespoeld — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· model onbeladen",
     "toast_flush_failed": "Spoelen mislukt: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Ontwikkeling",
     "switch_to_light": "Schakel over naar het lichtthema",
     "switch_to_dark": "Schakel over naar een donker thema",
     "not_found_title": "Pagina niet gevonden",
-    "not_found_body": "Dit adres hoort bij geen enkele pagina in VoiceStudio."
+    "not_found_body": "Dit adres hoort bij geen enkele pagina in EliVoice."
   },
   "stories": {
     "title": "Verhalen-editor",

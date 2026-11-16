@@ -1637,13 +1637,13 @@
     "toast_flushed": "刷新 — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· 模型卸载",
     "toast_flush_failed": "刷新失败：{{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · 开发版",
     "switch_to_light": "切换到浅色主题",
     "switch_to_dark": "切换到深色主题",
     "not_found_title": "找不到页面",
-    "not_found_body": "此地址与 VoiceStudio 中的任何页面都不匹配。"
+    "not_found_body": "此地址与 EliVoice 中的任何页面都不匹配。"
   },
   "stories": {
     "title": "故事编辑器",

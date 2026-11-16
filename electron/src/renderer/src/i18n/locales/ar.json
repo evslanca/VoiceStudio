@@ -1665,13 +1665,13 @@
     "toast_flushed": "متدفق — ذاكرة الوصول العشوائي {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· تم تفريغ النموذج",
     "toast_flush_failed": "فشل التدفق: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · تطوير",
     "switch_to_light": "التبديل إلى موضوع الضوء",
     "switch_to_dark": "التبديل إلى المظهر الداكن",
     "not_found_title": "الصفحة غير موجودة",
-    "not_found_body": "هذا العنوان لا يطابق أي صفحة في VoiceStudio."
+    "not_found_body": "هذا العنوان لا يطابق أي صفحة في EliVoice."
   },
   "stories": {
     "title": "محرر القصص",

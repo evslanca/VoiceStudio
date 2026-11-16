@@ -1637,13 +1637,13 @@
     "toast_flushed": "플러시 — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· 모델 언로드됨",
     "toast_flush_failed": "플러시 실패: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · 개발",
     "switch_to_light": "밝은 테마로 전환",
     "switch_to_dark": "어두운 테마로 전환",
     "not_found_title": "페이지를 찾을 수 없음",
-    "not_found_body": "이 주소와 일치하는 VoiceStudio 페이지가 없습니다."
+    "not_found_body": "이 주소와 일치하는 EliVoice 페이지가 없습니다."
   },
   "stories": {
     "title": "스토리 편집자",

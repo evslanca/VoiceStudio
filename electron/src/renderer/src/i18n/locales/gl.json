@@ -329,7 +329,7 @@
     "voice_note": "As entradas propias dunha voz teñen prioridade sobre o dicionario do idioma cando esa voz fala."
   },
   "app": {
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Dev",
     "switch_to_light": "Cambia ao tema claro",
@@ -339,7 +339,7 @@
     "toast_model_unloaded": "· modelo descargado",
     "toast_flush_failed": "Fallou a descarga: {{message}}",
     "not_found_title": "Non se atopou a páxina",
-    "not_found_body": "Este enderezo non coincide con ningunha páxina de VoiceStudio."
+    "not_found_body": "Este enderezo non coincide con ningunha páxina de EliVoice."
   },
   "nav": {
     "home": "Casa",

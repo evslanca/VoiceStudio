@@ -1651,13 +1651,13 @@
     "toast_flushed": "Сброшено — ОЗУ {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· модель выгружена",
     "toast_flush_failed": "Сброс не выполнен: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Разработка",
     "switch_to_light": "Переключиться на светлую тему",
     "switch_to_dark": "Переключиться на темную тему",
     "not_found_title": "Страница не найдена",
-    "not_found_body": "Этот адрес не соответствует ни одной странице VoiceStudio."
+    "not_found_body": "Этот адрес не соответствует ни одной странице EliVoice."
   },
   "stories": {
     "title": "Редактор историй",

@@ -1637,13 +1637,13 @@
     "toast_flushed": "フラッシュ — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· モデルがアンロードされました",
     "toast_flush_failed": "フラッシュに失敗しました: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · 開発",
     "switch_to_light": "ライトテーマに切り替える",
     "switch_to_dark": "ダークテーマに切り替える",
     "not_found_title": "ページが見つかりません",
-    "not_found_body": "このアドレスに一致する VoiceStudio のページはありません。"
+    "not_found_body": "このアドレスに一致する EliVoice のページはありません。"
   },
   "stories": {
     "title": "ストーリーエディター",

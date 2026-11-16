@@ -1637,13 +1637,13 @@
     "toast_flushed": "Gespült – RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· Modell entladen",
     "toast_flush_failed": "Spülung fehlgeschlagen: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Entwicklung",
     "switch_to_light": "Wechseln Sie zum Lichtthema",
     "switch_to_dark": "Wechseln Sie zum dunklen Thema",
     "not_found_title": "Seite nicht gefunden",
-    "not_found_body": "Diese Adresse passt zu keiner Seite in VoiceStudio."
+    "not_found_body": "Diese Adresse passt zu keiner Seite in EliVoice."
   },
   "stories": {
     "title": "Story-Editor",

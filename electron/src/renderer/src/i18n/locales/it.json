@@ -1639,13 +1639,13 @@
     "toast_flushed": "Scaricato — RAM {{ram}}G · VRAM {{vram}}G{{unloaded}}",
     "toast_model_unloaded": "· modello scarico",
     "toast_flush_failed": "Eliminazione non riuscita: {{message}}",
-    "name": "VoiceStudio",
+    "name": "EliVoice",
     "version": "v{{version}}",
     "version_dev": "v{{version}} · Sviluppo",
     "switch_to_light": "Passa al tema chiaro",
     "switch_to_dark": "Passa al tema scuro",
     "not_found_title": "Pagina non trovata",
-    "not_found_body": "Questo indirizzo non corrisponde a nessuna pagina di VoiceStudio."
+    "not_found_body": "Questo indirizzo non corrisponde a nessuna pagina di EliVoice."
   },
   "stories": {
     "title": "Redattore di storie",
