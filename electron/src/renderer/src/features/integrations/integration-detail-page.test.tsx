@@ -64,15 +64,15 @@ it('exports the n8n workflow only on request and handles canceled saves', async 
   route.slug = 'n8n';
   save.mockResolvedValue({ canceled: true });
   render(<IntegrationDetailPage />);
-  expect(screen.getByText(/Import this workflow into n8n/)).toBeInTheDocument();
+  expect(screen.getAllByText(/Import this workflow into n8n/)[0]).toBeInTheDocument();
   expect(save).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole('button', { name: 'Save as…' }));
+  fireEvent.click(screen.getAllByRole('button', { name: 'Save as…' })[0]);
   await waitFor(() => expect(save).toHaveBeenCalledTimes(1));
   expect(save.mock.calls[0][1]).toBe('voicestudio-n8n.json');
   expect(toast.success).not.toHaveBeenCalled();
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Save as…' })).toBeEnabled());
+  await waitFor(() => expect(screen.getAllByRole('button', { name: 'Save as…' })[0]).toBeEnabled());
   save.mockRejectedValue(new Error('disk full'));
-  fireEvent.click(screen.getByRole('button', { name: 'Save as…' }));
+  fireEvent.click(screen.getAllByRole('button', { name: 'Save as…' })[0]);
   await waitFor(() =>
     expect(toast.error).toHaveBeenCalledWith(expect.stringContaining('disk full')),
   );

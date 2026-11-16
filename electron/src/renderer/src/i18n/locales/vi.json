@@ -2964,18 +2964,18 @@
     "included": "Bao gồm"
   },
   "integrationCatalog": {
-    "setupHint": "Thêm cấu hình này vào {{file}}. Giữ VoiceStudio chạy. Thiết lập thông tin xác thực từ xa cần thiết trong ứng dụng khách.",
+    "setupHint": "Thêm cấu hình này vào {{file}}. Giữ EliVoice chạy. Thiết lập thông tin xác thực từ xa cần thiết trong ứng dụng khách.",
     "title": "Tích hợp",
     "featured": "Nổi bật",
-    "n8nHint": "Nhập quy trình này vào n8n, chỉnh sửa yêu cầu rồi chạy. Giữ VoiceStudio hoạt động. Docker và n8n từ xa cần địa chỉ máy chủ có thể truy cập và thông tin xác thực cần thiết.",
+    "n8nHint": "Nhập quy trình này vào n8n, chỉnh sửa yêu cầu rồi chạy. Giữ EliVoice hoạt động. Docker và n8n từ xa cần địa chỉ máy chủ có thể truy cập và thông tin xác thực cần thiết.",
     "worksWith": "Hoạt động với EliVoice",
-    "externalHint": "Mở trang web của nhà cung cấp. VoiceStudio không có cấu hình tích hợp cho mục này.",
+    "externalHint": "Mở trang web của nhà cung cấp. EliVoice không có cấu hình tích hợp cho mục này.",
     "setupTitle": "Thiết lập {{name}}",
     "setupUnavailable": "Không có cấu hình cho địa chỉ backend hiện tại. Hãy kiểm tra URL backend trong Cài đặt.",
     "capabilitiesTitle": "Khả năng",
     "websiteTitle": "Trang web",
     "mcpHttpHint": "Trỏ bất kỳ máy khách MCP Streamable HTTP nào tới URL này. Gửi header {{header}} để máy khách có giọng riêng.",
-    "mcpStdioHint": "Với máy khách chỉ hỗ trợ stdio, chạy shim đi kèm từ bản sao mã nguồn VoiceStudio. Thay cwd bằng đường dẫn bản sao của bạn.",
+    "mcpStdioHint": "Với máy khách chỉ hỗ trợ stdio, chạy shim đi kèm từ bản sao mã nguồn EliVoice. Thay cwd bằng đường dẫn bản sao của bạn.",
     "apiHint": "Các endpoint tương thích OpenAI trên backend này. Yêu cầu cục bộ không cần khóa; yêu cầu từ xa cần khóa API của backend.",
     "dockerHint": "Dùng :stable cho bản phát hành; :latest là bản xem trước liên tục từ main. Hãy giữ khóa API đã tạo: ứng dụng sẽ hỏi vì Docker che địa chỉ loopback.",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "Quy trình n8n",
       "dockerRunPowerShell": "Chạy container (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "Backend này ở xa: đặt OMNIVOICE_API_KEY trong shell thành khóa API của nó. Các ví dụ đọc khóa từ đó và không bao giờ chứa khóa.",
     "apiInsecureHint": "Khóa API cần https:// với backend ở xa. Hãy đặt backend này sau https (ví dụ Tailscale Serve) trước khi dùng khóa.",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "Lọc theo danh mục",
     "tagline": {
       "mcpClient": "Cho phép trợ lý này nói và chép lời bằng giọng cục bộ của bạn qua MCP.",
-      "mcp": "Kết nối mọi client MCP với công cụ giọng nói và chép lời của VoiceStudio.",
-      "api": "Gọi VoiceStudio từ mã của bạn qua các endpoint giọng nói và chép lời tương thích OpenAI.",
-      "container": "Chạy VoiceStudio như máy chủ tự lưu trữ với API và endpoint MCP.",
+      "mcp": "Kết nối mọi client MCP với công cụ giọng nói và chép lời của EliVoice.",
+      "api": "Gọi EliVoice từ mã của bạn qua các endpoint giọng nói và chép lời tương thích OpenAI.",
+      "container": "Chạy EliVoice như máy chủ tự lưu trữ với API và endpoint MCP.",
       "openaiAgents": "Trang bị cho pipeline giọng nói OpenAI Agents SDK khả năng chuyển giọng nói thành văn bản và văn bản thành giọng nói cục bộ.",
       "twilio": "Gọi và nghe điện thoại bằng chính giọng của bạn.",
       "n8n": "Tạo giọng nói từ workflow n8n với một workflow dựng sẵn.",

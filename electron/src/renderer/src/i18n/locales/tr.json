@@ -2964,18 +2964,18 @@
     "included": "Dahil"
   },
   "integrationCatalog": {
-    "setupHint": "Bu yapılandırmayı {{file}} dosyasına ekleyin. VoiceStudio açık kalsın. Gerekli uzak bağlantı kimlik bilgilerini istemcinizde ayarlayın.",
+    "setupHint": "Bu yapılandırmayı {{file}} dosyasına ekleyin. EliVoice açık kalsın. Gerekli uzak bağlantı kimlik bilgilerini istemcinizde ayarlayın.",
     "title": "Entegrasyonlar",
     "featured": "Öne çıkan",
-    "n8nHint": "Bu iş akışını n8n içine aktarın, isteği düzenleyip çalıştırın. VoiceStudio açık kalsın. Docker ve uzak n8n için erişilebilir bir arka uç adresi ve gerekli kimlik bilgileri gerekir.",
+    "n8nHint": "Bu iş akışını n8n içine aktarın, isteği düzenleyip çalıştırın. EliVoice açık kalsın. Docker ve uzak n8n için erişilebilir bir arka uç adresi ve gerekli kimlik bilgileri gerekir.",
     "worksWith": "EliVoice ile çalışır",
-    "externalHint": "Sağlayıcının web sitesini açar. VoiceStudio'da bu giriş için yerleşik kurulum yok.",
+    "externalHint": "Sağlayıcının web sitesini açar. EliVoice'da bu giriş için yerleşik kurulum yok.",
     "setupTitle": "{{name}} kurulumu",
     "setupUnavailable": "Mevcut arka uç adresi için kurulum kullanılamıyor. Ayarlar'da arka uç URL'sini kontrol edin.",
     "capabilitiesTitle": "Yetenekler",
     "websiteTitle": "Web sitesi",
     "mcpHttpHint": "Herhangi bir Streamable HTTP MCP istemcisini bu URL'ye yönlendirin. İstemciye kendi sesini vermek için {{header}} başlığını gönderin.",
-    "mcpStdioHint": "Yalnızca stdio destekleyen istemciler için, paketlenmiş shim'i VoiceStudio kaynak kodu kopyasından çalıştırın. cwd değerini kopyanızın yoluyla değiştirin.",
+    "mcpStdioHint": "Yalnızca stdio destekleyen istemciler için, paketlenmiş shim'i EliVoice kaynak kodu kopyasından çalıştırın. cwd değerini kopyanızın yoluyla değiştirin.",
     "apiHint": "Bu arka uçtaki OpenAI uyumlu uç noktalar. Yerel istekler anahtar gerektirmez; uzak istekler arka ucun API anahtarını gerektirir.",
     "dockerHint": "Sürümler için :stable kullanın; :latest main'den sürekli önizlemedir. Oluşturulan API anahtarını saklayın: Docker loopback adresini gizlediği için uygulama bunu ister.",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "n8n iş akışı",
       "dockerRunPowerShell": "Konteyneri çalıştır (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "Bu arka uç uzakta: kabuğunuzda OMNIVOICE_API_KEY değerini API anahtarına ayarlayın. Örnekler anahtarı oradan okur ve asla içermez.",
     "apiInsecureHint": "Uzak bir arka uçta API anahtarları https:// gerektirir. Anahtar kullanmadan önce bu arka ucu https arkasına alın (örneğin Tailscale Serve).",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "Kategoriye göre filtrele",
     "tagline": {
       "mcpClient": "Bu asistanın MCP üzerinden yerel seslerinizle konuşmasını ve metne dökmesini sağlayın.",
-      "mcp": "Herhangi bir MCP istemcisini VoiceStudio'nun konuşma ve metne dökme araçlarına bağlayın.",
-      "api": "OpenAI uyumlu konuşma ve metne dökme uç noktalarıyla VoiceStudio'yu kendi kodunuzdan çağırın.",
-      "container": "VoiceStudio'yu API'si ve MCP uç noktasıyla kendi barındırdığınız bir sunucu olarak çalıştırın.",
+      "mcp": "Herhangi bir MCP istemcisini EliVoice'nun konuşma ve metne dökme araçlarına bağlayın.",
+      "api": "OpenAI uyumlu konuşma ve metne dökme uç noktalarıyla EliVoice'yu kendi kodunuzdan çağırın.",
+      "container": "EliVoice'yu API'si ve MCP uç noktasıyla kendi barındırdığınız bir sunucu olarak çalıştırın.",
       "openaiAgents": "Bir OpenAI Agents SDK ses hattına yerel konuşmadan metne ve metinden konuşmaya özelliği kazandırın.",
       "twilio": "Kendi sesinizle telefon aramaları yapın ve yanıtlayın.",
       "n8n": "Hazır bir iş akışıyla n8n iş akışlarından konuşma üretin.",

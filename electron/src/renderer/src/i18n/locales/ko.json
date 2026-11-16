@@ -2964,18 +2964,18 @@
     "included": "포함"
   },
   "integrationCatalog": {
-    "setupHint": "이 설정을 {{file}}에 추가하세요. VoiceStudio를 실행한 상태로 유지하고 필요한 원격 인증 정보는 클라이언트에서 설정하세요.",
+    "setupHint": "이 설정을 {{file}}에 추가하세요. EliVoice를 실행한 상태로 유지하고 필요한 원격 인증 정보는 클라이언트에서 설정하세요.",
     "title": "연동",
     "featured": "추천",
-    "n8nHint": "이 워크플로를 n8n으로 가져와 요청을 편집한 뒤 실행하세요. VoiceStudio를 실행 상태로 유지하세요. Docker 및 원격 n8n에는 접근 가능한 백엔드 주소와 필요한 인증 정보가 있어야 합니다.",
+    "n8nHint": "이 워크플로를 n8n으로 가져와 요청을 편집한 뒤 실행하세요. EliVoice를 실행 상태로 유지하세요. Docker 및 원격 n8n에는 접근 가능한 백엔드 주소와 필요한 인증 정보가 있어야 합니다.",
     "worksWith": "EliVoice와 함께 작동",
-    "externalHint": "제공업체 웹사이트를 엽니다. 이 항목에는 VoiceStudio 기본 제공 설정이 없습니다.",
+    "externalHint": "제공업체 웹사이트를 엽니다. 이 항목에는 EliVoice 기본 제공 설정이 없습니다.",
     "setupTitle": "{{name}} 설정",
     "setupUnavailable": "현재 백엔드 주소로는 설정을 사용할 수 없습니다. 설정에서 백엔드 URL을 확인하세요.",
     "capabilitiesTitle": "기능",
     "websiteTitle": "웹사이트",
     "mcpHttpHint": "Streamable HTTP MCP 클라이언트를 이 URL로 지정하세요. {{header}} 헤더를 보내면 클라이언트마다 고유한 음성을 쓸 수 있습니다.",
-    "mcpStdioHint": "stdio만 지원하는 클라이언트는 VoiceStudio 소스 체크아웃에서 포함된 shim을 실행하세요. cwd를 체크아웃 경로로 바꾸세요.",
+    "mcpStdioHint": "stdio만 지원하는 클라이언트는 EliVoice 소스 체크아웃에서 포함된 shim을 실행하세요. cwd를 체크아웃 경로로 바꾸세요.",
     "apiHint": "이 백엔드의 OpenAI 호환 엔드포인트입니다. 로컬 요청에는 키가 필요 없고, 원격 요청에는 백엔드의 API 키가 필요합니다.",
     "dockerHint": "릴리스에는 :stable을 사용하세요. :latest는 main의 지속 미리보기입니다. 생성한 API 키를 보관하세요. Docker가 루프백 주소를 숨기므로 앱에서 키를 요청합니다.",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "n8n 워크플로",
       "dockerRunPowerShell": "컨테이너 실행 (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "이 백엔드는 원격입니다. 셸에서 OMNIVOICE_API_KEY를 해당 API 키로 설정하세요. 예제는 거기서 키를 읽으며 키를 포함하지 않습니다.",
     "apiInsecureHint": "원격 백엔드에서 API 키를 쓰려면 https://가 필요합니다. 키를 사용하기 전에 이 백엔드를 https(예: Tailscale Serve) 뒤에 두세요.",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "카테고리별 필터",
     "tagline": {
       "mcpClient": "이 어시스턴트가 MCP를 통해 로컬 음성으로 말하고 받아쓰게 하세요.",
-      "mcp": "모든 MCP 클라이언트를 VoiceStudio의 음성 합성 및 받아쓰기 도구에 연결하세요.",
-      "api": "OpenAI 호환 음성 합성 및 받아쓰기 엔드포인트로 직접 작성한 코드에서 VoiceStudio를 호출하세요.",
-      "container": "API와 MCP 엔드포인트를 갖춘 자체 호스팅 서버로 VoiceStudio를 실행하세요.",
+      "mcp": "모든 MCP 클라이언트를 EliVoice의 음성 합성 및 받아쓰기 도구에 연결하세요.",
+      "api": "OpenAI 호환 음성 합성 및 받아쓰기 엔드포인트로 직접 작성한 코드에서 EliVoice를 호출하세요.",
+      "container": "API와 MCP 엔드포인트를 갖춘 자체 호스팅 서버로 EliVoice를 실행하세요.",
       "openaiAgents": "OpenAI Agents SDK 음성 파이프라인에 로컬 음성-텍스트 및 텍스트-음성 변환을 제공하세요.",
       "twilio": "내 목소리로 전화를 걸고 받으세요.",
       "n8n": "바로 쓸 수 있는 워크플로로 n8n 워크플로에서 음성을 생성하세요.",

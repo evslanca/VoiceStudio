@@ -2964,18 +2964,18 @@
     "included": "Incluído"
   },
   "integrationCatalog": {
-    "setupHint": "Combina esta configuración en {{file}}. Mantén VoiceStudio funcionando. Establece as credenciais remotas necesarias no teu cliente.",
+    "setupHint": "Combina esta configuración en {{file}}. Mantén EliVoice funcionando. Establece as credenciais remotas necesarias no teu cliente.",
     "title": "Integracións",
     "featured": "Destacado",
-    "n8nHint": "Importa este fluxo de traballo a n8n, edita a solicitude e execútaa. Mantén VoiceStudio funcionando. Docker e n8n remoto necesitan un enderezo de backend accesible e as credenciais necesarias.",
+    "n8nHint": "Importa este fluxo de traballo a n8n, edita a solicitude e execútaa. Mantén EliVoice funcionando. Docker e n8n remoto necesitan un enderezo de backend accesible e as credenciais necesarias.",
     "worksWith": "Funciona con EliVoice",
-    "externalHint": "Abre o sitio web do provedor. VoiceStudio non ten ningunha configuración integrada para esta entrada.",
+    "externalHint": "Abre o sitio web do provedor. EliVoice non ten ningunha configuración integrada para esta entrada.",
     "setupTitle": "Configurar {{name}}",
     "setupUnavailable": "A configuración non está dispoñible para o enderezo do backend actual. Comprobe o URL do backend en Configuración.",
     "capabilitiesTitle": "Capacidades",
     "websiteTitle": "Sitio web",
     "mcpHttpHint": "Apunte a este URL calquera cliente HTTP MCP transmitible. Envía a cabeceira {{header}} para darlle ao cliente a súa propia voz.",
-    "mcpStdioHint": "Para clientes de só stdio, executa o shim incluído desde unha verificación de orixe de VoiceStudio. Substitúe cwd coa ruta de pago.",
+    "mcpStdioHint": "Para clientes de só stdio, executa o shim incluído desde unha verificación de orixe de EliVoice. Substitúe cwd coa ruta de pago.",
     "apiHint": "Puntos finais compatibles con OpenAI neste backend. As solicitudes locais non necesitan chave; As solicitudes remotas precisan da clave API do backend.",
     "dockerHint": "Pin :estable para lanzamentos; :latest é a vista previa continua de main. Manteña a clave da API xerada: a aplicación pídeo porque Docker oculta o enderezo de loopback.",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "fluxo de traballo n8n",
       "dockerRunPowerShell": "Executar o contedor (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "Este backend é remoto: establece OmniVoice_API_KEY no teu shell na súa clave API. Os fragmentos leno desde alí e nunca o conteñen.",
     "apiInsecureHint": "As claves da API necesitan https:// nun backend remoto. Pon este backend detrás de https (por exemplo Tailscale Serve) antes de usar unha clave.",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "Filtrar por categoría",
     "tagline": {
       "mcpClient": "Deixa que este asistente fale e transcriba coas túas voces locais a través de MCP.",
-      "mcp": "Conecta calquera cliente MCP ás ferramentas de voz e transcrición de VoiceStudio.",
-      "api": "Chama a VoiceStudio desde o teu propio código con puntos finais de voz e transcrición compatibles con OpenAI.",
-      "container": "Executa VoiceStudio como un servidor autoaloxado coa súa API e o seu punto final MCP.",
+      "mcp": "Conecta calquera cliente MCP ás ferramentas de voz e transcrición de EliVoice.",
+      "api": "Chama a EliVoice desde o teu propio código con puntos finais de voz e transcrición compatibles con OpenAI.",
+      "container": "Executa EliVoice como un servidor autoaloxado coa súa API e o seu punto final MCP.",
       "openaiAgents": "Ofrécelle un canal de voz de OpenAI Agents SDK de voz a texto e texto a voz local.",
       "twilio": "Fai e responde chamadas de teléfono coa túa propia voz.",
       "n8n": "Xera voz a partir de fluxos de traballo n8n cun fluxo de traballo preparado.",

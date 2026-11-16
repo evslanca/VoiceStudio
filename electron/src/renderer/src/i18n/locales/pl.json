@@ -2990,18 +2990,18 @@
     "included": "W zestawie"
   },
   "integrationCatalog": {
-    "setupHint": "Dodaj tę konfigurację do {{file}}. Pozostaw VoiceStudio uruchomione. Ustaw wymagane dane uwierzytelniające połączenia zdalnego w swoim kliencie.",
+    "setupHint": "Dodaj tę konfigurację do {{file}}. Pozostaw EliVoice uruchomione. Ustaw wymagane dane uwierzytelniające połączenia zdalnego w swoim kliencie.",
     "title": "Integracje",
     "featured": "Wyróżnione",
-    "n8nHint": "Zaimportuj ten przepływ do n8n, edytuj żądanie i uruchom go. Pozostaw VoiceStudio uruchomione. Docker i zdalne n8n wymagają dostępnego adresu backendu oraz wymaganych danych uwierzytelniających.",
+    "n8nHint": "Zaimportuj ten przepływ do n8n, edytuj żądanie i uruchom go. Pozostaw EliVoice uruchomione. Docker i zdalne n8n wymagają dostępnego adresu backendu oraz wymaganych danych uwierzytelniających.",
     "worksWith": "Działa z EliVoice",
-    "externalHint": "Otwiera stronę dostawcy. VoiceStudio nie ma wbudowanej konfiguracji dla tej pozycji.",
+    "externalHint": "Otwiera stronę dostawcy. EliVoice nie ma wbudowanej konfiguracji dla tej pozycji.",
     "setupTitle": "Skonfiguruj {{name}}",
     "setupUnavailable": "Konfiguracja jest niedostępna dla bieżącego adresu backendu. Sprawdź adres URL backendu w Ustawieniach.",
     "capabilitiesTitle": "Możliwości",
     "websiteTitle": "Strona internetowa",
     "mcpHttpHint": "Skieruj dowolnego klienta MCP Streamable HTTP na ten adres URL. Wyślij nagłówek {{header}}, aby nadać klientowi własny głos.",
-    "mcpStdioHint": "Dla klientów obsługujących tylko stdio uruchom dołączony shim z kopii kodu źródłowego VoiceStudio. Zastąp cwd ścieżką do swojej kopii.",
+    "mcpStdioHint": "Dla klientów obsługujących tylko stdio uruchom dołączony shim z kopii kodu źródłowego EliVoice. Zastąp cwd ścieżką do swojej kopii.",
     "apiHint": "Punkty końcowe zgodne z OpenAI w tym backendzie. Żądania lokalne nie wymagają klucza; zdalne wymagają klucza API backendu.",
     "dockerHint": "Używaj :stable dla wydań; :latest to bieżący podgląd z main. Zachowaj wygenerowany klucz API: aplikacja o niego poprosi, ponieważ Docker ukrywa adres loopback.",
     "capability": {
@@ -3028,7 +3028,8 @@
       "workflow": "Przepływ n8n",
       "dockerRunPowerShell": "Uruchom kontener (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "Ten backend jest zdalny: ustaw w powłoce OMNIVOICE_API_KEY na jego klucz API. Przykłady odczytują go stamtąd i nigdy go nie zawierają.",
     "apiInsecureHint": "Klucze API wymagają https:// dla zdalnego backendu. Umieść ten backend za https (np. Tailscale Serve), zanim użyjesz klucza.",
@@ -3048,9 +3049,9 @@
     "categoryFilter": "Filtruj według kategorii",
     "tagline": {
       "mcpClient": "Pozwól temu asystentowi mówić i transkrybować Twoimi lokalnymi głosami przez MCP.",
-      "mcp": "Połącz dowolnego klienta MCP z narzędziami mowy i transkrypcji VoiceStudio.",
-      "api": "Wywołuj VoiceStudio z własnego kodu przez endpointy mowy i transkrypcji zgodne z OpenAI.",
-      "container": "Uruchom VoiceStudio jako samodzielnie hostowany serwer z API i endpointem MCP.",
+      "mcp": "Połącz dowolnego klienta MCP z narzędziami mowy i transkrypcji EliVoice.",
+      "api": "Wywołuj EliVoice z własnego kodu przez endpointy mowy i transkrypcji zgodne z OpenAI.",
+      "container": "Uruchom EliVoice jako samodzielnie hostowany serwer z API i endpointem MCP.",
       "openaiAgents": "Daj potokowi głosowemu OpenAI Agents SDK lokalną zamianę mowy na tekst i tekstu na mowę.",
       "twilio": "Wykonuj i odbieraj połączenia telefoniczne własnym głosem.",
       "n8n": "Generuj mowę z workflowów n8n dzięki gotowemu workflowowi.",

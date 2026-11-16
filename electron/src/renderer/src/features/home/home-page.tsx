@@ -4,6 +4,7 @@ import {
   ArrowRightIcon,
   AudioLinesIcon,
   BookOpenIcon,
+  CompassIcon,
   Disc3Icon,
   FilmIcon,
   FolderOpenIcon,
@@ -320,6 +321,13 @@ export function HomePage() {
                     >
                       <SparklesIcon className="size-3.5" aria-hidden="true" />
                       {t('integrationCatalog.title')}
+                    </Link>
+                    <Link
+                      to="/pro"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/60 px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:border-border hover:bg-accent/60 hover:text-foreground"
+                    >
+                      <CompassIcon className="size-3.5" aria-hidden="true" />
+                      {t('roadmapPage.title')}
                     </Link>
                   </div>
                 </div>

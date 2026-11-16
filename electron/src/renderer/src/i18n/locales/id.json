@@ -2964,18 +2964,18 @@
     "included": "Termasuk"
   },
   "integrationCatalog": {
-    "setupHint": "Gabungkan konfigurasi ini ke {{file}}. Biarkan VoiceStudio berjalan. Atur kredensial jarak jauh yang diperlukan di klien Anda.",
+    "setupHint": "Gabungkan konfigurasi ini ke {{file}}. Biarkan EliVoice berjalan. Atur kredensial jarak jauh yang diperlukan di klien Anda.",
     "title": "Integrasi",
     "featured": "Unggulan",
-    "n8nHint": "Impor alur kerja ini ke n8n, edit permintaan, lalu jalankan. Biarkan VoiceStudio berjalan. Docker dan n8n jarak jauh memerlukan alamat backend yang dapat dijangkau serta kredensial yang diperlukan.",
+    "n8nHint": "Impor alur kerja ini ke n8n, edit permintaan, lalu jalankan. Biarkan EliVoice berjalan. Docker dan n8n jarak jauh memerlukan alamat backend yang dapat dijangkau serta kredensial yang diperlukan.",
     "worksWith": "Berfungsi dengan EliVoice",
-    "externalHint": "Membuka situs penyedia. VoiceStudio tidak memiliki penyiapan bawaan untuk entri ini.",
+    "externalHint": "Membuka situs penyedia. EliVoice tidak memiliki penyiapan bawaan untuk entri ini.",
     "setupTitle": "Siapkan {{name}}",
     "setupUnavailable": "Penyiapan tidak tersedia untuk alamat backend saat ini. Periksa URL backend di Pengaturan.",
     "capabilitiesTitle": "Kemampuan",
     "websiteTitle": "Situs web",
     "mcpHttpHint": "Arahkan klien MCP Streamable HTTP apa pun ke URL ini. Kirim header {{header}} agar klien memiliki suaranya sendiri.",
-    "mcpStdioHint": "Untuk klien yang hanya mendukung stdio, jalankan shim bawaan dari salinan kode sumber VoiceStudio. Ganti cwd dengan jalur salinan Anda.",
+    "mcpStdioHint": "Untuk klien yang hanya mendukung stdio, jalankan shim bawaan dari salinan kode sumber EliVoice. Ganti cwd dengan jalur salinan Anda.",
     "apiHint": "Endpoint kompatibel OpenAI di backend ini. Permintaan lokal tidak memerlukan kunci; permintaan jarak jauh memerlukan kunci API backend.",
     "dockerHint": "Gunakan :stable untuk rilis; :latest adalah pratinjau berjalan dari main. Simpan kunci API yang dibuat: aplikasi memintanya karena Docker menyembunyikan alamat loopback.",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "Alur kerja n8n",
       "dockerRunPowerShell": "Jalankan kontainer (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "Backend ini jarak jauh: atur OMNIVOICE_API_KEY di shell Anda ke kunci API-nya. Contoh membacanya dari sana dan tidak pernah memuatnya.",
     "apiInsecureHint": "Kunci API memerlukan https:// pada backend jarak jauh. Tempatkan backend ini di balik https (misalnya Tailscale Serve) sebelum memakai kunci.",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "Filter menurut kategori",
     "tagline": {
       "mcpClient": "Biarkan asisten ini berbicara dan mentranskripsi dengan suara lokal Anda melalui MCP.",
-      "mcp": "Hubungkan klien MCP apa pun ke alat ucapan dan transkripsi VoiceStudio.",
-      "api": "Panggil VoiceStudio dari kode Anda sendiri dengan endpoint ucapan dan transkripsi yang kompatibel dengan OpenAI.",
-      "container": "Jalankan VoiceStudio sebagai server yang di-host sendiri dengan API dan endpoint MCP-nya.",
+      "mcp": "Hubungkan klien MCP apa pun ke alat ucapan dan transkripsi EliVoice.",
+      "api": "Panggil EliVoice dari kode Anda sendiri dengan endpoint ucapan dan transkripsi yang kompatibel dengan OpenAI.",
+      "container": "Jalankan EliVoice sebagai server yang di-host sendiri dengan API dan endpoint MCP-nya.",
       "openaiAgents": "Berikan pipeline suara OpenAI Agents SDK kemampuan ucapan-ke-teks dan teks-ke-ucapan lokal.",
       "twilio": "Lakukan dan jawab panggilan telepon dengan suara Anda sendiri.",
       "n8n": "Hasilkan ucapan dari workflow n8n dengan workflow siap pakai.",

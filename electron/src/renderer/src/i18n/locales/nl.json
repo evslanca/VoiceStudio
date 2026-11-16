@@ -2964,18 +2964,18 @@
     "included": "Inbegrepen"
   },
   "integrationCatalog": {
-    "setupHint": "Voeg deze configuratie toe aan {{file}}. Laat VoiceStudio draaien. Stel vereiste externe inloggegevens in je client in.",
+    "setupHint": "Voeg deze configuratie toe aan {{file}}. Laat EliVoice draaien. Stel vereiste externe inloggegevens in je client in.",
     "title": "Integraties",
     "featured": "Uitgelicht",
-    "n8nHint": "Importeer deze workflow in n8n, bewerk het verzoek en voer hem uit. Laat VoiceStudio draaien. Docker en externe n8n-instanties hebben een bereikbaar backendadres en eventuele inloggegevens nodig.",
+    "n8nHint": "Importeer deze workflow in n8n, bewerk het verzoek en voer hem uit. Laat EliVoice draaien. Docker en externe n8n-instanties hebben een bereikbaar backendadres en eventuele inloggegevens nodig.",
     "worksWith": "Werkt met EliVoice",
-    "externalHint": "Opent de website van de aanbieder. VoiceStudio heeft geen ingebouwde configuratie voor dit item.",
+    "externalHint": "Opent de website van de aanbieder. EliVoice heeft geen ingebouwde configuratie voor dit item.",
     "setupTitle": "{{name}} instellen",
     "setupUnavailable": "Configuratie is niet beschikbaar voor het huidige backendadres. Controleer de backend-URL in Instellingen.",
     "capabilitiesTitle": "Mogelijkheden",
     "websiteTitle": "Website",
     "mcpHttpHint": "Richt een willekeurige Streamable HTTP MCP-client op deze URL. Stuur de header {{header}} mee om de client een eigen stem te geven.",
-    "mcpStdioHint": "Voor clients die alleen stdio spreken: start de meegeleverde shim vanuit een VoiceStudio-broncode-checkout. Vervang cwd door het pad van je checkout.",
+    "mcpStdioHint": "Voor clients die alleen stdio spreken: start de meegeleverde shim vanuit een EliVoice-broncode-checkout. Vervang cwd door het pad van je checkout.",
     "apiHint": "OpenAI-compatibele endpoints op deze backend. Lokale verzoeken hebben geen sleutel nodig; externe verzoeken hebben de API-sleutel van de backend nodig.",
     "dockerHint": "Gebruik :stable voor releases; :latest is de doorlopende preview van main. Bewaar de gegenereerde API-sleutel: de app vraagt erom omdat Docker het loopback-adres verbergt.",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "n8n-workflow",
       "dockerRunPowerShell": "Container starten (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "Deze backend is extern: stel OMNIVOICE_API_KEY in je shell in op de API-sleutel. De voorbeelden lezen hem daaruit en bevatten hem nooit.",
     "apiInsecureHint": "API-sleutels vereisen https:// bij een externe backend. Zet deze backend achter https (bijvoorbeeld Tailscale Serve) voordat je een sleutel gebruikt.",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "Filteren op categorie",
     "tagline": {
       "mcpClient": "Laat deze assistent via MCP spreken en transcriberen met je lokale stemmen.",
-      "mcp": "Verbind elke MCP-client met de spraak- en transcriptietools van VoiceStudio.",
-      "api": "Roep VoiceStudio aan vanuit je eigen code met OpenAI-compatibele spraak- en transcriptie-endpoints.",
-      "container": "Draai VoiceStudio als zelfgehoste server met de API en het MCP-endpoint.",
+      "mcp": "Verbind elke MCP-client met de spraak- en transcriptietools van EliVoice.",
+      "api": "Roep EliVoice aan vanuit je eigen code met OpenAI-compatibele spraak- en transcriptie-endpoints.",
+      "container": "Draai EliVoice als zelfgehoste server met de API en het MCP-endpoint.",
       "openaiAgents": "Geef een spraakpipeline van OpenAI Agents SDK lokale spraak-naar-tekst en tekst-naar-spraak.",
       "twilio": "Bel en beantwoord telefoongesprekken met je eigen stem.",
       "n8n": "Genereer spraak vanuit n8n-workflows met een kant-en-klare workflow.",

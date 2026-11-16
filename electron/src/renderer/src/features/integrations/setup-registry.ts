@@ -6,7 +6,7 @@ import {
   mcpSetup,
   remoteAuth,
 } from './mcp-setup';
-import { n8nSetup } from './n8n-setup';
+import { n8nMusicSetup, n8nSetup } from './n8n-setup';
 import { openaiAgentsSetup } from './openai-agents-setup';
 import type { ComponentType, ReactNode } from 'react';
 import { TwilioSetup, TWILIO_DOCS } from './twilio-setup';
@@ -277,7 +277,7 @@ export const INTEGRATION_SETUPS: Record<string, IntegrationSetup> = {
             `curl ${base}/v1/audio/speech \\`,
             ...auth,
             '  -H "Content-Type: application/json" \\',
-            '  -d \'{"model":"tts-1","voice":"default","input":"Hello from VoiceStudio.","response_format":"wav"}\' \\',
+            '  -d \'{"model":"tts-1","voice":"default","input":"Hello from EliVoice.","response_format":"wav"}\' \\',
             '  --output speech.wav',
             '',
           ].join('\n'),
@@ -328,7 +328,7 @@ export const INTEGRATION_SETUPS: Record<string, IntegrationSetup> = {
             ')',
             '',
             'with client.audio.speech.with_streaming_response.create(',
-            '    model="tts-1", voice="default", input="Hello from VoiceStudio.",',
+            '    model="tts-1", voice="default", input="Hello from EliVoice.",',
             '    response_format="wav",',
             ') as response:',
             '    response.stream_to_file("speech.wav")',
@@ -407,6 +407,7 @@ export const INTEGRATION_SETUPS: Record<string, IntegrationSetup> = {
     docs: `${REPO_DOCS}/integrations/n8n.md`,
     blocks: (baseUrl) => {
       const setup = n8nSetup('n8n', baseUrl);
+      const music = n8nMusicSetup('n8n', baseUrl);
       if (!setup) return null;
       return [
         {
@@ -417,6 +418,18 @@ export const INTEGRATION_SETUPS: Record<string, IntegrationSetup> = {
           text: setup.text,
           download: { file: setup.file, type: 'application/json' },
         },
+        ...(music
+          ? [
+              {
+                id: 'music-workflow',
+                titleKey: 'integrationCatalog.block.musicWorkflow',
+                hintKey: 'integrationCatalog.n8nHint',
+                language: 'json' as const,
+                text: music.text,
+                download: { file: music.file, type: 'application/json' },
+              },
+            ]
+          : []),
       ];
     },
   },

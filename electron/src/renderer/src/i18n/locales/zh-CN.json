@@ -2960,18 +2960,18 @@
     "included": "包含"
   },
   "integrationCatalog": {
-    "setupHint": "将此配置合并到 {{file}}，并保持 VoiceStudio 运行。如需远程连接凭据，请在客户端中设置。",
+    "setupHint": "将此配置合并到 {{file}}，并保持 EliVoice 运行。如需远程连接凭据，请在客户端中设置。",
     "title": "集成",
     "featured": "精选",
-    "n8nHint": "将此工作流导入 n8n，编辑请求后运行。请保持 VoiceStudio 运行。Docker 和远程 n8n 需要可访问的后端地址及必要的凭据。",
+    "n8nHint": "将此工作流导入 n8n，编辑请求后运行。请保持 EliVoice 运行。Docker 和远程 n8n 需要可访问的后端地址及必要的凭据。",
     "worksWith": "适用于 EliVoice",
-    "externalHint": "打开提供商网站。VoiceStudio 没有为此条目提供内置配置。",
+    "externalHint": "打开提供商网站。EliVoice 没有为此条目提供内置配置。",
     "setupTitle": "设置 {{name}}",
     "setupUnavailable": "当前后端地址无法生成配置。请在设置中检查后端 URL。",
     "capabilitiesTitle": "功能",
     "websiteTitle": "网站",
     "mcpHttpHint": "将任意 Streamable HTTP MCP 客户端指向此 URL。发送 {{header}} 请求头即可为该客户端指定专属声音。",
-    "mcpStdioHint": "对于仅支持 stdio 的客户端，请在 VoiceStudio 源码检出目录中运行随附的 shim。将 cwd 替换为你的检出路径。",
+    "mcpStdioHint": "对于仅支持 stdio 的客户端，请在 EliVoice 源码检出目录中运行随附的 shim。将 cwd 替换为你的检出路径。",
     "apiHint": "此后端上的 OpenAI 兼容端点。本地请求无需密钥；远程请求需要后端的 API 密钥。",
     "dockerHint": "正式版本请使用 :stable；:latest 是来自 main 的滚动预览版。请保存生成的 API 密钥：由于 Docker 隐藏了回环地址，应用会要求输入它。",
     "capability": {
@@ -2998,7 +2998,8 @@
       "workflow": "n8n 工作流",
       "dockerRunPowerShell": "运行容器（Windows PowerShell）",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "此后端为远程后端：请在 shell 中将 OMNIVOICE_API_KEY 设为其 API 密钥。示例会从那里读取密钥，且从不包含密钥。",
     "apiInsecureHint": "远程后端的 API 密钥需要 https://。使用密钥前，请将此后端置于 https 之后（例如 Tailscale Serve）。",
@@ -3018,9 +3019,9 @@
     "categoryFilter": "按类别筛选",
     "tagline": {
       "mcpClient": "让此助手通过 MCP 使用你的本地音色说话和转写。",
-      "mcp": "将任意 MCP 客户端连接到 VoiceStudio 的语音合成与转写工具。",
-      "api": "通过兼容 OpenAI 的语音合成与转写端点，从你自己的代码调用 VoiceStudio。",
-      "container": "将 VoiceStudio 作为自托管服务器运行，提供 API 和 MCP 端点。",
+      "mcp": "将任意 MCP 客户端连接到 EliVoice 的语音合成与转写工具。",
+      "api": "通过兼容 OpenAI 的语音合成与转写端点，从你自己的代码调用 EliVoice。",
+      "container": "将 EliVoice 作为自托管服务器运行，提供 API 和 MCP 端点。",
       "openaiAgents": "为 OpenAI Agents SDK 语音管线提供本地语音转文字和文字转语音。",
       "twilio": "用你自己的声音拨打和接听电话。",
       "n8n": "通过现成的工作流，从 n8n 工作流生成语音。",

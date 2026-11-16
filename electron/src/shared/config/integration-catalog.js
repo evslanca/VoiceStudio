@@ -107,6 +107,8 @@ const groups = [
   [
     'developer',
     [
+      'EliVoice API|https://github.com/evslanca/VoiceStudio',
+      'ACE-Step 1.5|https://github.com/ace-step/ACE-Step-1.5',
       'GitHub|https://github.com',
       'GitLab|https://gitlab.com',
       'Bitbucket|https://bitbucket.org',

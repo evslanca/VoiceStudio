@@ -2964,18 +2964,18 @@
     "included": "利用可能"
   },
   "integrationCatalog": {
-    "setupHint": "この設定を {{file}} に追加してください。VoiceStudio を起動したままにし、必要なリモート認証情報はクライアントで設定してください。",
+    "setupHint": "この設定を {{file}} に追加してください。EliVoice を起動したままにし、必要なリモート認証情報はクライアントで設定してください。",
     "title": "連携",
     "featured": "注目",
-    "n8nHint": "このワークフローをn8nにインポートし、リクエストを編集して実行します。VoiceStudioは起動したままにしてください。Dockerやリモートのn8nには、接続可能なバックエンドのアドレスと必要な認証情報を設定してください。",
+    "n8nHint": "このワークフローをn8nにインポートし、リクエストを編集して実行します。EliVoiceは起動したままにしてください。Dockerやリモートのn8nには、接続可能なバックエンドのアドレスと必要な認証情報を設定してください。",
     "worksWith": "EliVoice で動作します",
-    "externalHint": "提供元のウェブサイトを開きます。この項目には VoiceStudio の組み込み設定はありません。",
+    "externalHint": "提供元のウェブサイトを開きます。この項目には EliVoice の組み込み設定はありません。",
     "setupTitle": "{{name}} を設定",
     "setupUnavailable": "現在のバックエンドアドレスでは設定を利用できません。設定でバックエンド URL を確認してください。",
     "capabilitiesTitle": "機能",
     "websiteTitle": "ウェブサイト",
     "mcpHttpHint": "Streamable HTTP 対応の MCP クライアントをこの URL に向けてください。{{header}} ヘッダーを送ると、クライアントごとに声を割り当てられます。",
-    "mcpStdioHint": "stdio のみのクライアントでは、VoiceStudio のソースチェックアウトから同梱の shim を実行します。cwd をチェックアウトのパスに置き換えてください。",
+    "mcpStdioHint": "stdio のみのクライアントでは、EliVoice のソースチェックアウトから同梱の shim を実行します。cwd をチェックアウトのパスに置き換えてください。",
     "apiHint": "このバックエンドの OpenAI 互換エンドポイントです。ローカルからのリクエストにキーは不要で、リモートからはバックエンドの API キーが必要です。",
     "dockerHint": "リリース版には :stable を使います。:latest は main の継続的なプレビューです。生成した API キーは保管してください。Docker がループバックアドレスを隠すため、アプリから入力を求められます。",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "n8n ワークフロー",
       "dockerRunPowerShell": "コンテナを実行 (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "このバックエンドはリモートです。シェルで OMNIVOICE_API_KEY にその API キーを設定してください。サンプルはそこから読み取り、キー自体は含みません。",
     "apiInsecureHint": "リモートのバックエンドで API キーを使うには https:// が必要です。キーを使う前に、このバックエンドを https（例: Tailscale Serve）の背後に置いてください。",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "カテゴリで絞り込む",
     "tagline": {
       "mcpClient": "このアシスタントが MCP 経由でローカルの音声を使って話し、文字起こしできるようにします。",
-      "mcp": "任意の MCP クライアントを VoiceStudio の音声合成・文字起こしツールに接続します。",
-      "api": "OpenAI 互換の音声合成・文字起こしエンドポイントで、独自のコードから VoiceStudio を呼び出します。",
-      "container": "VoiceStudio を API と MCP エンドポイント付きのセルフホストサーバーとして実行します。",
+      "mcp": "任意の MCP クライアントを EliVoice の音声合成・文字起こしツールに接続します。",
+      "api": "OpenAI 互換の音声合成・文字起こしエンドポイントで、独自のコードから EliVoice を呼び出します。",
+      "container": "EliVoice を API と MCP エンドポイント付きのセルフホストサーバーとして実行します。",
       "openaiAgents": "OpenAI Agents SDK の音声パイプラインに、ローカルの音声認識と音声合成を提供します。",
       "twilio": "自分の声で電話をかけたり受けたりできます。",
       "n8n": "すぐに使えるワークフローで、n8n ワークフローから音声を生成します。",

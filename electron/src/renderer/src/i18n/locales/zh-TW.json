@@ -2964,18 +2964,18 @@
     "included": "包含"
   },
   "integrationCatalog": {
-    "setupHint": "將此設定合併至 {{file}}，並保持 VoiceStudio 執行。如需遠端連線憑證，請在用戶端中設定。",
+    "setupHint": "將此設定合併至 {{file}}，並保持 EliVoice 執行。如需遠端連線憑證，請在用戶端中設定。",
     "title": "整合",
     "featured": "精選",
-    "n8nHint": "將此工作流程匯入 n8n，編輯請求後執行。請保持 VoiceStudio 執行。Docker 和遠端 n8n 需要可存取的後端位址及必要的認證資訊。",
+    "n8nHint": "將此工作流程匯入 n8n，編輯請求後執行。請保持 EliVoice 執行。Docker 和遠端 n8n 需要可存取的後端位址及必要的認證資訊。",
     "worksWith": "適用於 EliVoice",
-    "externalHint": "開啟供應商網站。VoiceStudio 沒有為此項目提供內建設定。",
+    "externalHint": "開啟供應商網站。EliVoice 沒有為此項目提供內建設定。",
     "setupTitle": "設定 {{name}}",
     "setupUnavailable": "目前的後端位址無法產生設定。請在設定中檢查後端 URL。",
     "capabilitiesTitle": "功能",
     "websiteTitle": "網站",
     "mcpHttpHint": "將任何 Streamable HTTP MCP 用戶端指向此 URL。傳送 {{header}} 標頭即可為該用戶端指定專屬聲音。",
-    "mcpStdioHint": "對於僅支援 stdio 的用戶端，請在 VoiceStudio 原始碼簽出目錄中執行隨附的 shim。將 cwd 替換為你的簽出路徑。",
+    "mcpStdioHint": "對於僅支援 stdio 的用戶端，請在 EliVoice 原始碼簽出目錄中執行隨附的 shim。將 cwd 替換為你的簽出路徑。",
     "apiHint": "此後端上的 OpenAI 相容端點。本機要求不需要金鑰；遠端要求需要後端的 API 金鑰。",
     "dockerHint": "正式版本請使用 :stable；:latest 是來自 main 的滾動預覽版。請保存產生的 API 金鑰：由於 Docker 隱藏了回送位址，應用程式會要求輸入它。",
     "capability": {
@@ -3002,7 +3002,8 @@
       "workflow": "n8n 工作流程",
       "dockerRunPowerShell": "執行容器（Windows PowerShell）",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "此後端為遠端後端：請在 shell 中將 OMNIVOICE_API_KEY 設為其 API 金鑰。範例會從那裡讀取金鑰，且從不包含金鑰。",
     "apiInsecureHint": "遠端後端的 API 金鑰需要 https://。使用金鑰前，請將此後端置於 https 之後（例如 Tailscale Serve）。",
@@ -3022,9 +3023,9 @@
     "categoryFilter": "依類別篩選",
     "tagline": {
       "mcpClient": "讓此助理透過 MCP 使用你的本機語音說話和轉錄。",
-      "mcp": "將任何 MCP 用戶端連接到 VoiceStudio 的語音合成與轉錄工具。",
-      "api": "透過相容 OpenAI 的語音合成與轉錄端點，從你自己的程式碼呼叫 VoiceStudio。",
-      "container": "將 VoiceStudio 作為自架伺服器執行，提供 API 和 MCP 端點。",
+      "mcp": "將任何 MCP 用戶端連接到 EliVoice 的語音合成與轉錄工具。",
+      "api": "透過相容 OpenAI 的語音合成與轉錄端點，從你自己的程式碼呼叫 EliVoice。",
+      "container": "將 EliVoice 作為自架伺服器執行，提供 API 和 MCP 端點。",
       "openaiAgents": "為 OpenAI Agents SDK 語音管線提供本機語音轉文字和文字轉語音。",
       "twilio": "用你自己的聲音撥打和接聽電話。",
       "n8n": "透過現成的工作流程，從 n8n 工作流程產生語音。",

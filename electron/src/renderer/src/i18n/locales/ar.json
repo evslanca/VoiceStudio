@@ -3016,18 +3016,18 @@
     "included": "مضمّنة"
   },
   "integrationCatalog": {
-    "setupHint": "ادمج هذا الإعداد في {{file}}. أبقِ VoiceStudio قيد التشغيل. اضبط بيانات اعتماد الاتصال البعيد المطلوبة في عميلك.",
+    "setupHint": "ادمج هذا الإعداد في {{file}}. أبقِ EliVoice قيد التشغيل. اضبط بيانات اعتماد الاتصال البعيد المطلوبة في عميلك.",
     "title": "التكاملات",
     "featured": "مميّز",
-    "n8nHint": "استورد سير العمل هذا إلى n8n، وعدّل الطلب ثم شغّله. أبقِ VoiceStudio قيد التشغيل. يحتاج Docker وn8n البعيد إلى عنوان خلفية يمكن الوصول إليه وبيانات الاعتماد المطلوبة.",
+    "n8nHint": "استورد سير العمل هذا إلى n8n، وعدّل الطلب ثم شغّله. أبقِ EliVoice قيد التشغيل. يحتاج Docker وn8n البعيد إلى عنوان خلفية يمكن الوصول إليه وبيانات الاعتماد المطلوبة.",
     "worksWith": "يعمل مع EliVoice",
-    "externalHint": "يفتح موقع المزوّد. لا يوفّر VoiceStudio إعدادًا مدمجًا لهذا الإدخال.",
+    "externalHint": "يفتح موقع المزوّد. لا يوفّر EliVoice إعدادًا مدمجًا لهذا الإدخال.",
     "setupTitle": "إعداد {{name}}",
     "setupUnavailable": "الإعداد غير متاح لعنوان الواجهة الخلفية الحالي. تحقّق من عنوان URL للواجهة الخلفية في الإعدادات.",
     "capabilitiesTitle": "الإمكانات",
     "websiteTitle": "الموقع الإلكتروني",
     "mcpHttpHint": "وجّه أي عميل MCP يدعم Streamable HTTP إلى هذا العنوان. أرسل الترويسة {{header}} لمنح العميل صوته الخاص.",
-    "mcpStdioHint": "للعملاء الذين يدعمون stdio فقط، شغّل الـ shim المرفق من نسخة الشيفرة المصدرية لـ VoiceStudio. استبدل cwd بمسار نسختك.",
+    "mcpStdioHint": "للعملاء الذين يدعمون stdio فقط، شغّل الـ shim المرفق من نسخة الشيفرة المصدرية لـ EliVoice. استبدل cwd بمسار نسختك.",
     "apiHint": "نقاط نهاية متوافقة مع OpenAI على هذه الواجهة الخلفية. الطلبات المحلية لا تحتاج مفتاحًا؛ الطلبات البعيدة تحتاج مفتاح API الخاص بالواجهة الخلفية.",
     "dockerHint": "استخدم :stable للإصدارات؛ و:latest هو المعاينة المستمرة من main. احتفظ بمفتاح API المُنشأ: سيطلبه التطبيق لأن Docker يخفي عنوان loopback.",
     "capability": {
@@ -3054,7 +3054,8 @@
       "workflow": "سير عمل n8n",
       "dockerRunPowerShell": "تشغيل الحاوية (Windows PowerShell)",
       "musicCurl": "Generate music (curl)",
-      "dubbingCurl": "Dubbing projects (curl)"
+      "dubbingCurl": "Dubbing projects (curl)",
+      "musicWorkflow": "n8n workflow (Music Studio)"
     },
     "apiBearerHint": "هذه الواجهة الخلفية بعيدة: اضبط OMNIVOICE_API_KEY في الصدفة على مفتاح API الخاص بها. تقرأ الأمثلة المفتاح من هناك ولا تتضمنه أبدًا.",
     "apiInsecureHint": "تتطلب مفاتيح API استخدام https:// مع واجهة خلفية بعيدة. ضع هذه الواجهة خلف https (مثل Tailscale Serve) قبل استخدام مفتاح.",
@@ -3074,9 +3075,9 @@
     "categoryFilter": "التصفية حسب الفئة",
     "tagline": {
       "mcpClient": "دع هذا المساعد يتحدث وينسخ بأصواتك المحلية عبر MCP.",
-      "mcp": "اربط أي عميل MCP بأدوات الكلام والنسخ في VoiceStudio.",
-      "api": "استدعِ VoiceStudio من شيفرتك عبر نقاط نهاية للكلام والنسخ متوافقة مع OpenAI.",
-      "container": "شغّل VoiceStudio كخادم مستضاف ذاتيًا مع واجهة API ونقطة نهاية MCP.",
+      "mcp": "اربط أي عميل MCP بأدوات الكلام والنسخ في EliVoice.",
+      "api": "استدعِ EliVoice من شيفرتك عبر نقاط نهاية للكلام والنسخ متوافقة مع OpenAI.",
+      "container": "شغّل EliVoice كخادم مستضاف ذاتيًا مع واجهة API ونقطة نهاية MCP.",
       "openaiAgents": "امنح مسار الصوت في OpenAI Agents SDK تحويلًا محليًا للكلام إلى نص والنص إلى كلام.",
       "twilio": "أجرِ المكالمات الهاتفية وأجب عنها بصوتك.",
       "n8n": "أنشئ كلامًا من سير عمل n8n باستخدام سير عمل جاهز.",

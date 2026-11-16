@@ -2966,18 +2966,18 @@
     "included": "Inclus"
   },
   "integrationCatalog": {
-    "setupHint": "Intégrez cette configuration dans {{file}}. Gardez VoiceStudio ouvert. Configurez les identifiants distants nécessaires dans votre client.",
+    "setupHint": "Intégrez cette configuration dans {{file}}. Gardez EliVoice ouvert. Configurez les identifiants distants nécessaires dans votre client.",
     "title": "Intégrations",
     "featured": "À la une",
-    "n8nHint": "Importez ce workflow dans n8n, modifiez la requête et exécutez-le. Gardez VoiceStudio ouvert. Docker et les instances n8n distantes nécessitent une adresse de backend accessible et les identifiants requis.",
+    "n8nHint": "Importez ce workflow dans n8n, modifiez la requête et exécutez-le. Gardez EliVoice ouvert. Docker et les instances n8n distantes nécessitent une adresse de backend accessible et les identifiants requis.",
     "worksWith": "Fonctionne avec EliVoice",
-    "externalHint": "Ouvre le site du fournisseur. VoiceStudio n'a pas de configuration intégrée pour cette entrée.",
+    "externalHint": "Ouvre le site du fournisseur. EliVoice n'a pas de configuration intégrée pour cette entrée.",
     "setupTitle": "Configurer {{name}}",
     "setupUnavailable": "La configuration n'est pas disponible pour l'adresse actuelle du backend. Vérifiez l'URL du backend dans les réglages.",
     "capabilitiesTitle": "Fonctionnalités",
     "websiteTitle": "Site web",
     "mcpHttpHint": "Pointez n'importe quel client MCP Streamable HTTP vers cette URL. Envoyez l'en-tête {{header}} pour donner au client sa propre voix.",
-    "mcpStdioHint": "Pour les clients stdio uniquement, lancez le shim fourni depuis une copie du code source de VoiceStudio. Remplacez cwd par le chemin de votre copie.",
+    "mcpStdioHint": "Pour les clients stdio uniquement, lancez le shim fourni depuis une copie du code source de EliVoice. Remplacez cwd par le chemin de votre copie.",
     "apiHint": "Points de terminaison compatibles OpenAI sur ce backend. Les requêtes locales n'ont pas besoin de clé ; les requêtes distantes nécessitent la clé API du backend.",
     "dockerHint": "Utilisez :stable pour les versions publiées ; :latest est l'aperçu continu de main. Conservez la clé API générée : l'application la demande car Docker masque l'adresse de bouclage.",
     "capability": {
@@ -3004,7 +3004,8 @@
       "workflow": "Workflow n8n",
       "dockerRunPowerShell": "Lancer le conteneur (Windows PowerShell)",
       "musicCurl": "Générer de la musique (curl)",
-      "dubbingCurl": "Projets de doublage (curl)"
+      "dubbingCurl": "Projets de doublage (curl)",
+      "musicWorkflow": "Workflow n8n (Studio Musical)"
     },
     "apiBearerHint": "Ce backend est distant : définissez OMNIVOICE_API_KEY dans votre shell avec sa clé API. Les exemples la lisent depuis là et ne la contiennent jamais.",
     "apiInsecureHint": "Les clés API exigent https:// sur un backend distant. Placez ce backend derrière https (par exemple Tailscale Serve) avant d'utiliser une clé.",
@@ -3024,9 +3025,9 @@
     "categoryFilter": "Filtrer par catégorie",
     "tagline": {
       "mcpClient": "Permettez à cet assistant de parler et de transcrire avec vos voix locales via MCP.",
-      "mcp": "Connectez n'importe quel client MCP aux outils de synthèse et de transcription de VoiceStudio.",
-      "api": "Appelez VoiceStudio depuis votre propre code via des endpoints de synthèse et de transcription compatibles OpenAI.",
-      "container": "Exécutez VoiceStudio comme serveur auto-hébergé avec son API et son endpoint MCP.",
+      "mcp": "Connectez n'importe quel client MCP aux outils de synthèse et de transcription de EliVoice.",
+      "api": "Appelez EliVoice depuis votre propre code via des endpoints de synthèse et de transcription compatibles OpenAI.",
+      "container": "Exécutez EliVoice comme serveur auto-hébergé avec son API et son endpoint MCP.",
       "openaiAgents": "Dotez un pipeline vocal OpenAI Agents SDK de la reconnaissance et de la synthèse vocales locales.",
       "twilio": "Passez et recevez des appels téléphoniques avec votre propre voix.",
       "n8n": "Générez de la parole depuis des workflows n8n grâce à un workflow prêt à l'emploi.",
