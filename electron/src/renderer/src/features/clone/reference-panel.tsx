@@ -16,6 +16,7 @@ import {
   MicIcon,
   PencilIcon,
   SaveIcon,
+  ScissorsIcon,
   XIcon,
 } from 'lucide-react';
 import { useEffect, useId, useState } from 'react';
@@ -34,6 +35,7 @@ import { setWorkspace } from '@/lib/store/workspace';
 import { cn } from '@/lib/utils';
 import { ReferenceSourcePicker, ReferenceUsageNote } from './reference-input';
 import { FOCUS_TRANSCRIPT_EVENT } from './add-transcript-button';
+import { TrimAudio } from '../gallery/trim-audio';
 
 interface SaveProfileFormProps {
   metadata?: { refText: string; instruct: string; language: string; seed: number | null };
@@ -362,6 +364,7 @@ export function ReferencePanel({
   const profiles = useProfiles();
   const selectedProfileId = useCloneSetting('selectedProfileId');
   const [saving, setSaving] = useState(false);
+  const [trimming, setTrimming] = useState(false);
 
   const profile =
     !setup && selectedProfileId
@@ -395,11 +398,23 @@ export function ReferencePanel({
                   {t('clone.duration_seconds', { seconds: reference.durationSeconds.toFixed(1) })}
                 </span>
               ) : null}
+              {reference.objectUrl && (
+                <Button
+                  variant={trimming ? 'secondary' : 'outline'}
+                  size="xs"
+                  aria-pressed={trimming}
+                  onClick={() => setTrimming((open) => !open)}
+                >
+                  <ScissorsIcon data-icon="inline-start" />
+                  {t('gallery.trim')}
+                </Button>
+              )}
               <Button
                 variant="ghost"
                 size="xs"
                 onClick={() => {
                   setSaving(false);
+                  setTrimming(false);
                   void setReferenceFile(null);
                 }}
               >
@@ -407,7 +422,22 @@ export function ReferencePanel({
                 {t('clone.clear')}
               </Button>
             </div>
-            {reference.objectUrl ? (
+            {trimming && reference.objectUrl ? (
+              <div className="rounded-lg border border-border/60 bg-background/50">
+                <TrimAudio
+                  src={reference.objectUrl}
+                  file={file}
+                  name={file.name.replace(/\.[^.]+$/, '')}
+                  busy={false}
+                  defaultLengthSeconds={15}
+                  onCancel={() => setTrimming(false)}
+                  onSave={(trimmedFile) => {
+                    setTrimming(false);
+                    void setReferenceFile(trimmedFile);
+                  }}
+                />
+              </div>
+            ) : reference.objectUrl ? (
               <WaveformPlayer
                 src={reference.objectUrl}
                 source="clone-reference"

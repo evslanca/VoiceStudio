@@ -10,6 +10,7 @@ import { AgentFixButton } from '@/components/agent-fix-button';
 import { getBridge } from '@/components/bridge';
 import { WorkspaceHeader } from '@/components/app-shell/workspace-header';
 import { hasCompleteTranslation, multiLangTargets } from '@shared/utils/multiLang';
+import { activeWordIndex, evenSplitWords } from '@shared/utils/audiobookLyrics';
 import { castSpeakers, segmentGenInputs } from '@shared/utils/segments';
 import { clampSegmentEdit } from '@shared/utils/timeline';
 import { DubExportPanel } from './dub-export-panel';
@@ -92,7 +93,10 @@ import { useTtsReadiness } from '@/hooks/use-tts-readiness';
 import { useReviewMode } from '@/hooks/use-review-mode';
 import { apiFetch, apiJson, apiPath, describeError, isAbortError } from '@/lib/api/client';
 import { createObjectUrl, revokeObjectUrl } from '@/lib/audio/object-url';
-import { requestPlaybackSeek } from '@/lib/audio/playback-clock';
+import { ReadingHighlightPicker } from '@/components/reading-highlight-picker';
+import { usePlaybackSource } from '@/lib/audio/playback';
+import { requestPlaybackSeek, usePlaybackClock } from '@/lib/audio/playback-clock';
+import { useReadingHighlightColors } from '@/lib/store/reading-highlight';
 import { beginAppActivity } from '@/lib/app-activity';
 import { TRANSLATION_TARGET_LABELS, translationTargetCode } from '@/lib/translation-targets';
 import { cn } from '@/lib/utils';
@@ -257,6 +261,9 @@ export function DubPage() {
     url?: string;
   } | null>(null);
   const [preview, setPreview] = useState('original');
+  const dubPlayback = usePlaybackClock('dub-preview');
+  const activePlayback = usePlaybackSource();
+  const highlightColors = useReadingHighlightColors();
   const [segmentPreview, setSegmentPreview] = useState<{
     id: string;
     url: string;
@@ -1729,12 +1736,17 @@ export function DubPage() {
                   className="divide-y divide-border/50 overflow-hidden rounded-lg border border-border/60 bg-muted/15 empty:hidden"
                 >
                   {session.segments.length > 0 && (
-                    <SegmentFindBar
-                      {...find.bar}
-                      canReplace={find.bar.canReplace && !busy && !session.recovery}
-                      canReplaceAll={find.bar.canReplaceAll && !busy && !session.recovery}
-                      disabled={busy || Boolean(session.recovery)}
-                    />
+                    <div className="flex items-center gap-2 pr-2">
+                      <div className="min-w-0 flex-1">
+                        <SegmentFindBar
+                          {...find.bar}
+                          canReplace={find.bar.canReplace && !busy && !session.recovery}
+                          canReplaceAll={find.bar.canReplaceAll && !busy && !session.recovery}
+                          disabled={busy || Boolean(session.recovery)}
+                        />
+                      </div>
+                      <ReadingHighlightPicker compact className="shrink-0" />
+                    </div>
                   )}
                   {showCheckpoint && checkpointStage && (
                     <CheckpointBanner
@@ -1938,6 +1950,16 @@ export function DubPage() {
                       const segment = session.segments[index];
                       if (!segment) return null;
                       const translationError = getDubTranslationError(segment, code);
+                      const isSpeakingSegment =
+                        (activePlayback === 'dub-preview' || dubPlayback.time > 0) &&
+                        dubPlayback.time >= segment.start &&
+                        dubPlayback.time <= segment.end;
+                      const spokenWordIndex = isSpeakingSegment
+                        ? activeWordIndex(
+                            evenSplitWords(segment.text, segment.start, segment.end),
+                            dubPlayback.time,
+                          )
+                        : -1;
                       return (
                         <div
                           key={row.key}
@@ -1956,6 +1978,7 @@ export function DubPage() {
                               'group/segment relative isolate grid grid-cols-[3.25rem_minmax(0,1fr)] gap-x-2 px-2 py-3.5 transition-[background-color,box-shadow] after:pointer-events-none after:absolute after:right-2 after:bottom-0 after:left-[4.25rem] after:h-px after:bg-gradient-to-r after:from-border/65 after:via-border/35 after:to-transparent after:transition-opacity hover:bg-muted/[0.12] hover:after:opacity-100 focus-within:bg-muted/[0.16] focus-within:after:from-primary/45',
                               selectedSegmentId === segment.id &&
                                 'bg-primary/[0.05] shadow-[inset_2px_0_0_color-mix(in_oklab,var(--primary)_55%,transparent)] after:from-primary/55 after:via-primary/20',
+                              isSpeakingSegment && 'bg-primary/[0.06]',
                             )}
                           >
                             <div
@@ -2274,13 +2297,18 @@ export function DubPage() {
                                 >
                                   <HighlightedText
                                     className={
-                                      find.holdsActive(segment.id, 'text')
+                                      find.holdsActive(segment.id, 'text') || isSpeakingSegment
                                         ? undefined
                                         : 'line-clamp-2'
                                     }
                                     dir="auto"
                                     text={segment.text}
                                     query={find.query}
+                                    spokenWordIndex={spokenWordIndex}
+                                    spokenHighlight={{
+                                      backgroundColor: highlightColors.bgColor,
+                                      color: highlightColors.textColor,
+                                    }}
                                     {...find.activeRange(segment.id, 'text')}
                                   />
                                 </button>

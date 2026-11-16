@@ -1,6 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import { BellRingIcon } from 'lucide-react';
 
 export type HomeSeason = 'christmas' | 'winter' | null;
 
@@ -160,67 +158,4 @@ export function PixelSnow() {
     };
   }, []);
   return <canvas ref={ref} className="home-snow" aria-hidden="true" data-testid="home-snow" />;
-}
-
-// 14×14 pixel Santa: hat with pompom, brim, face and beard.
-const SANTA_ROWS = [
-  '.........WW...',
-  '........RWW...',
-  '.......RR.....',
-  '.....RRRR.....',
-  '....RRRRRR....',
-  '...WWWWWWWW...',
-  '...SSSSSSSS...',
-  '...SSBSSBSS...',
-  '..WSSPSSPSSW..',
-  '..WWWWSSWWWW..',
-  '..WWWWWWWWWW..',
-  '...WWWWWWWW...',
-  '....WWWWWW....',
-  '.....WWWW.....',
-];
-const SANTA_COLORS: Record<string, string> = {
-  R: '#d64545',
-  W: '#f4f4f5',
-  S: '#f2c6a0',
-  B: '#3f3f46',
-  P: '#ec9a9a',
-};
-const SANTA_RECTS = SANTA_ROWS.flatMap((row, y) => {
-  const runs: { x: number; y: number; width: number; fill: string }[] = [];
-  for (let x = 0; x < row.length; x += 1) {
-    const cell = row[x];
-    if (cell === '.') continue;
-    const previous = runs.at(-1);
-    if (previous && previous.fill === SANTA_COLORS[cell] && previous.x + previous.width === x) {
-      previous.width += 1;
-    } else {
-      runs.push({ x, y, width: 1, fill: SANTA_COLORS[cell] });
-    }
-  }
-  return runs;
-});
-
-function PixelSanta() {
-  return (
-    <svg viewBox="0 0 14 14" width={28} height={28} shapeRendering="crispEdges" aria-hidden="true">
-      {SANTA_RECTS.map(({ x, y, width, fill }) => (
-        <rect key={`${x}-${y}`} x={x} y={y} width={width} height={1} fill={fill} />
-      ))}
-    </svg>
-  );
-}
-
-/** Christmas week: a small bell and a pixel Santa who says "Ho ho ho!" now and then. */
-export function HomeChristmas() {
-  const { t } = useTranslation();
-  return (
-    <span className="home-christmas" aria-hidden="true" data-testid="home-christmas">
-      <BellRingIcon className="home-christmas-bell" />
-      <span className="home-christmas-santa">
-        <PixelSanta />
-        <span className="home-christmas-bubble">{t('homeUi.hoHoHo')}</span>
-      </span>
-    </span>
-  );
 }

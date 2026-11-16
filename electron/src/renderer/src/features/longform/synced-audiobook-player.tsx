@@ -11,6 +11,8 @@ import {
 } from '@/components/media-player';
 import { Button } from '@/components/ui/button';
 import { formatClock } from '@/components/media-clock';
+import { ReadingHighlightPicker } from '@/components/reading-highlight-picker';
+import { useReadingHighlightColors } from '@/lib/store/reading-highlight';
 import { cn } from '@/lib/utils';
 import {
   activeWordIndex,
@@ -74,6 +76,7 @@ function SyncedPlayerContent({
   chapters: AudiobookRenderChapter[];
 }) {
   const { t } = useTranslation();
+  const { bgColor, textColor } = useReadingHighlightColors();
   const pane = useRef<HTMLDivElement>(null);
   const paused = useMediaState('paused');
   const waiting = useMediaState('waiting');
@@ -113,7 +116,7 @@ function SyncedPlayerContent({
           aria-pressed={!paused}
           aria-busy={waiting}
           onClick={() => {
-            if (paused) void player.current?.play().catch(() => {});
+            if (paused) void player.current?.play().catch(() => { });
             else void player.current?.pause();
           }}
         >
@@ -143,6 +146,7 @@ function SyncedPlayerContent({
         <span className="shrink-0 font-mono text-[11px] tabular-nums text-muted-foreground">
           {formatClock(currentTime)} / {formatClock(duration)}
         </span>
+        <ReadingHighlightPicker compact />
       </div>
       {error && (
         <p role="alert" className="border-t border-border/50 px-3 py-2 text-xs text-destructive">
@@ -168,6 +172,7 @@ function SyncedPlayerContent({
               }
               past={active >= chapter.wordStart + chapter.wordCount}
               title={chapter.title || t('audiobook.chapter_n', { n: index + 1 })}
+              highlightStyle={{ backgroundColor: bgColor, color: textColor }}
               onSeek={seekTo}
             />
           ))}
@@ -183,6 +188,7 @@ const LyricsChapter = memo(function LyricsChapter({
   activeIndex,
   past,
   title,
+  highlightStyle,
   onSeek,
 }: {
   chapter: TimelineChapter;
@@ -190,6 +196,7 @@ const LyricsChapter = memo(function LyricsChapter({
   activeIndex: number;
   past: boolean;
   title: string;
+  highlightStyle: { backgroundColor: string; color: string };
   onSeek: (time: number) => void;
 }) {
   return (
@@ -218,8 +225,9 @@ const LyricsChapter = memo(function LyricsChapter({
                   className={cn(
                     'rounded px-0.5 text-inherit outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring',
                     spoken && 'text-foreground/70',
-                    active && 'bg-primary/15 font-medium text-primary ring-1 ring-primary/20',
+                    active && 'font-semibold shadow-xs',
                   )}
+                  style={active ? highlightStyle : undefined}
                   onClick={() => onSeek(word.start)}
                 >
                   {word.text}

@@ -8,6 +8,7 @@ const HomePage = lazyRouteComponent(() => import('@/features/home/home-page'), '
 const ClonePage = lazyRouteComponent(() => import('@/features/clone/clone-page'), 'ClonePage');
 const DesignPage = lazyRouteComponent(() => import('@/features/design/design-page'), 'DesignPage');
 const DubPage = lazyRouteComponent(() => import('@/features/dub/dub-page'), 'DubPage');
+const MusicPage = lazyRouteComponent(() => import('@/features/music/music-page'), 'MusicPage');
 const BatchPage = lazyRouteComponent(() => import('@/features/batch/batch-page'), 'BatchPage');
 const GalleryPage = lazyRouteComponent(
   () => import('@/features/gallery/gallery-page'),
@@ -129,6 +130,12 @@ export const dubRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/dub',
   component: DubPage,
+});
+
+export const musicRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/music',
+  component: MusicPage,
 });
 
 export const logsRoute = createRoute({
@@ -306,6 +313,7 @@ export const routeTree = rootRoute.addChildren([
   galleryRoute,
   logsRoute,
   dubRoute,
+  musicRoute,
   designRoute,
   transcriptionsRoute,
   settingsRoute,

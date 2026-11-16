@@ -1,32 +1,50 @@
 import { Link } from '@tanstack/react-router';
-import { GemIcon } from 'lucide-react';
+import { BlocksIcon, MusicIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import './support-shortcut.css';
-import { GithubStar } from './github-star';
 
 export function SupportShortcut() {
   const { t } = useTranslation();
   return (
-    <div className="flex shrink-0 items-center gap-0.5">
+    <div className="flex shrink-0 items-center gap-1">
       <Tooltip>
         <TooltipTrigger
           render={
             <Link
-              to="/pro"
-              aria-label={t('supportPlans.get_pro')}
+              to="/music"
+              aria-label={t('music.title')}
               className="support-shortcut app-no-drag flex items-center gap-1 px-1.5 focus-visible:outline-2 focus-visible:outline-ring"
             />
           }
         >
-          <GemIcon aria-hidden="true" className="size-3.5" />
-          <span className="hidden text-xs font-medium sm:inline">{t('supportPlans.get_pro')}</span>
+          <MusicIcon aria-hidden="true" className="size-3.5" />
+          <span className="hidden text-xs font-medium sm:inline">{t('nav.music')}</span>
         </TooltipTrigger>
         <TooltipContent surface="theme" side="bottom">
-          {t('supportPlans.get_pro')}
+          {t('music.title')}
         </TooltipContent>
       </Tooltip>
-      <GithubStar />
+
+      <Tooltip>
+        <TooltipTrigger
+          render={
+            <Link
+              to="/integrations"
+              aria-label={t('integrationCatalog.title')}
+              className="support-shortcut app-no-drag flex items-center gap-1 px-1.5 focus-visible:outline-2 focus-visible:outline-ring"
+            />
+          }
+        >
+          <BlocksIcon aria-hidden="true" className="size-3.5" />
+          <span className="hidden text-xs font-medium sm:inline">
+            {t('integrationCatalog.title')}
+          </span>
+        </TooltipTrigger>
+        <TooltipContent surface="theme" side="bottom">
+          {t('integrationCatalog.title')}
+        </TooltipContent>
+      </Tooltip>
     </div>
   );
 }

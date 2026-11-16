@@ -32,16 +32,20 @@ export function trimmedAudio(buffer: AudioBuffer, start: number, end: number): B
 }
 export function TrimAudio({
   src,
+  file,
   name,
   busy,
   saveError,
+  defaultLengthSeconds = MAX_TRIM_SECONDS,
   onSave,
   onCancel,
 }: {
   src: string;
+  file?: File;
   name: string;
   busy: boolean;
   saveError?: string;
+  defaultLengthSeconds?: number;
   onSave(file: File): void;
   onCancel(): void;
 }) {
@@ -62,8 +66,12 @@ export function TrimAudio({
     let disposed = false;
     void (async () => {
       try {
-        const response = await apiFetch(src, { signal: controller.signal });
-        const decoded = await decodeToMonoLowRate(await response.blob());
+        const sourceBlob = file
+          ? file
+          : src.startsWith('blob:')
+            ? await (await fetch(src, { signal: controller.signal })).blob()
+            : await (await apiFetch(src, { signal: controller.signal })).blob();
+        const decoded = await decodeToMonoLowRate(sourceBlob);
         if (disposed || !container.current) return;
         if (!Number.isFinite(decoded.duration) || decoded.duration < 0.02)
           throw new Error('Audio too short');
@@ -83,7 +91,10 @@ export function TrimAudio({
         wave.on('error', (error) => {
           if (!disposed) setError(describeError(error));
         });
-        const initial = { start: 0, end: Math.min(MAX_TRIM_SECONDS, decoded.duration) };
+        const initial = {
+          start: 0,
+          end: Math.min(MAX_TRIM_SECONDS, defaultLengthSeconds, decoded.duration),
+        };
         wave.once('ready', () => {
           if (disposed) return;
           region.current = regions.addRegion({
@@ -111,7 +122,7 @@ export function TrimAudio({
       waveform.current = null;
       buffer.current = null;
     };
-  }, [src]);
+  }, [defaultLengthSeconds, file, src]);
   useEffect(() => {
     if (!buffer.current || !duration) return;
     try {

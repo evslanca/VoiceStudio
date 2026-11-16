@@ -7,6 +7,7 @@ import {
   AlertTriangleIcon,
   AudioLinesIcon,
   CheckCircle2Icon,
+  CompassIcon,
   CopyIcon,
   CpuIcon,
   DownloadIcon,
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
+import { ExternalLink } from '@/components/external-link';
 import { getBridge } from '@/components/bridge';
 import { apiJson, describeError } from '@/lib/api/client';
 import type { SystemInfo } from '@/lib/api/types';
@@ -159,8 +161,32 @@ export function DiagnosticsSettings() {
         <SettingsRow id="diagnostics-app" title={t('about.app')}>
           <span className="inline-flex items-center gap-2 text-sm font-medium" translate="no">
             <img src={brandIcon} alt="" className="size-5" />
-            VoiceStudio
+            EliVoice
           </span>
+        </SettingsRow>
+        <SettingsRow id="diagnostics-author" title={t('about.author')}>
+          <div className="flex flex-wrap items-center justify-end gap-x-2 gap-y-1 text-xs">
+            <span className="font-medium text-foreground">Eliel Lança</span>
+            <span aria-hidden="true" className="text-muted-foreground">
+              ·
+            </span>
+            <ExternalLink href="https://www.eliellanca.com.br" className="text-primary">
+              www.eliellanca.com.br
+            </ExternalLink>
+            <span aria-hidden="true" className="text-muted-foreground">
+              ·
+            </span>
+            <span className="font-mono text-muted-foreground">15/11/2026</span>
+          </div>
+        </SettingsRow>
+        <SettingsRow id="diagnostics-roadmap" title={t('roadmapPage.title')}>
+          <Link
+            to="/pro"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+          >
+            <CompassIcon className="size-3.5" aria-hidden="true" />
+            {t('roadmapPage.hero_title')}
+          </Link>
         </SettingsRow>
         <SettingsRow id="diagnostics-version" title={t('about.version')}>
           <span className="font-mono text-xs">

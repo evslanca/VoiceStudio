@@ -43,4 +43,7 @@ export function buildLyricsTimeline(
   },
 ): AudiobookLyricsTimeline;
 
-export function activeWordIndex(words: AudiobookLyricsWord[], time: number): number;
+export function activeWordIndex(
+  words: Array<Pick<AudiobookLyricsWord, 'start' | 'end'>>,
+  time: number,
+): number;

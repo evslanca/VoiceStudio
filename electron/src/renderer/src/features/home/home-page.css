@@ -370,11 +370,29 @@
     box-shadow 180ms ease;
 }
 
+.home-destination[data-destination='/music'] {
+  --home-accent: #f472b6;
+}
 .home-destination[data-destination='/design'] {
   --home-accent: #b8a1ee;
 }
 .home-destination[data-destination='/dub'] {
   --home-accent: #72cebd;
+}
+
+.home-overview-stats {
+  display: grid;
+  flex: 0 1 360px;
+  grid-template-columns: repeat(2, minmax(145px, 1fr));
+  gap: 8px;
+  margin-inline-start: auto;
+}
+
+@media (max-width: 720px) {
+  .home-overview-stats {
+    flex: 1 1 100%;
+    max-width: none;
+  }
 }
 
 .home-destination--primary {

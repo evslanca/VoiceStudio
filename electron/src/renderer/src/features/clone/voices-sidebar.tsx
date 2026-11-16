@@ -200,6 +200,34 @@ export function SavedVoices({
 
   return (
     <>
+      {!library && (
+        <div className="flex gap-1.5 border-b border-border/50 px-2 pb-2">
+          <Button
+            type="button"
+            size="xs"
+            variant="outline"
+            className="min-w-0 flex-1 justify-center gap-1 text-[11px]"
+            onClick={() =>
+              runRendererTask('Open voice cloning', () => navigate({ to: '/clone' }))
+            }
+          >
+            <FingerprintIcon className="size-3 shrink-0" aria-hidden="true" />
+            <span className="truncate">{t('clone.title')}</span>
+          </Button>
+          <Button
+            type="button"
+            size="xs"
+            variant="outline"
+            className="min-w-0 flex-1 justify-center gap-1 text-[11px]"
+            onClick={() =>
+              runRendererTask('Open voice design', () => navigate({ to: '/design' }))
+            }
+          >
+            <WandSparklesIcon className="size-3 shrink-0" aria-hidden="true" />
+            <span className="truncate">{t('voiceSelector.createVoice')}</span>
+          </Button>
+        </div>
+      )}
       {showLibraryTools ? (
         <div className="sticky top-0 z-20 space-y-2 bg-sidebar/95 px-2 pt-1 pb-2 backdrop-blur-xl">
           <div className="relative">

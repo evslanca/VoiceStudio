@@ -108,6 +108,65 @@ export function HomeFeatureIcon({ destination }: { destination: string }) {
             <circle className="home-svg-sequence home-svg-delay-long" cx="24" cy="27" r="3" />
           </>
         );
+      case '/music':
+        return (
+          <>
+            <g className="home-svg-wave">
+              <path d="M5 18v7m4-11v11m4-8v8" />
+            </g>
+            <g className="home-svg-tilt">
+              <circle cx="17.5" cy="22.5" r="3" />
+              <circle cx="26.5" cy="19.5" r="3" />
+              <path d="M20.5 22.5V8l9-2.5V19.5" />
+            </g>
+          </>
+        );
+      case '/batch':
+        return (
+          <>
+            <rect className="home-svg-sequence" x="4" y="5" width="16" height="10" rx="2" />
+            <path className="home-svg-sequence home-svg-delay" d="M8 19h16a2 2 0 0 0 2-2V9" />
+            <path
+              className="home-svg-sequence home-svg-delay-long"
+              d="M12 24h14a2 2 0 0 0 2-2v-8"
+            />
+          </>
+        );
+      case '/personas':
+        return (
+          <>
+            <circle cx="12" cy="11" r="4" />
+            <path d="M4.5 26c0-4.5 15-4.5 15 0" />
+            <g className="home-svg-wave">
+              <path d="M23 10v8m4-11v14" />
+            </g>
+          </>
+        );
+      case '/integrations':
+        return (
+          <>
+            <rect className="home-svg-sequence" x="4" y="4" width="10" height="10" rx="2.5" />
+            <rect
+              className="home-svg-sequence home-svg-delay"
+              x="18"
+              y="4"
+              width="10"
+              height="10"
+              rx="2.5"
+            />
+            <rect
+              className="home-svg-sequence home-svg-delay-long"
+              x="4"
+              y="18"
+              width="10"
+              height="10"
+              rx="2.5"
+            />
+            <g className="home-svg-spark">
+              <path d="M23 17v10m-5-5h10" />
+            </g>
+          </>
+        );
       default:
         return (
           <>

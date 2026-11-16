@@ -6,7 +6,9 @@ import {
   FingerprintIcon,
   ImportIcon,
   LanguagesIcon,
+  PlusIcon,
   Trash2Icon,
+  WandSparklesIcon,
 } from 'lucide-react';
 import { AudioLinesIcon } from 'lucide-react';
 import { SecondarySidebar } from '@/components/workspace-sidebar';
@@ -294,6 +296,28 @@ export function LongformPage({ mode }: { mode: Mode }) {
                   <span className="truncate">{profile.name}</span>
                 </Button>
               ))}
+              <div className="flex flex-wrap gap-1.5 pt-1.5">
+                <Link
+                  to="/clone"
+                  className={cn(
+                    buttonVariants({ variant: 'outline', size: 'xs' }),
+                    'min-w-0 flex-1 justify-center gap-1 text-[11px]',
+                  )}
+                >
+                  <PlusIcon className="size-3 shrink-0" aria-hidden="true" />
+                  <span className="truncate">{t('clone.title')}</span>
+                </Link>
+                <Link
+                  to="/design"
+                  className={cn(
+                    buttonVariants({ variant: 'outline', size: 'xs' }),
+                    'min-w-0 flex-1 justify-center gap-1 text-[11px]',
+                  )}
+                >
+                  <WandSparklesIcon className="size-3 shrink-0" aria-hidden="true" />
+                  <span className="truncate">{t('voiceSelector.createVoice')}</span>
+                </Link>
+              </div>
             </div>
             {mode === 'stories' ? (
               <StorySpeed draft={draft} disabled={locked} onChange={set} />
@@ -557,7 +581,7 @@ export function LongformPage({ mode }: { mode: Mode }) {
                     </Button>
                   </div>
                 </div>
-                {mode === 'audiobook' ? (
+                {draft.outputScript.trim() ? (
                   <SyncedAudiobookPlayer
                     src={apiPath('/audio/' + encodeURIComponent(draft.output))}
                     script={draft.outputScript}

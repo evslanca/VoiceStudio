@@ -1,19 +1,55 @@
+import { useEffect, useMemo, useRef } from 'react';
 import { AudioLinesIcon, XIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { activeWordIndex, evenSplitWords } from '@shared/utils/audiobookLyrics';
 import { Button } from '@/components/ui/button';
+import { ReadingHighlightPicker } from '@/components/reading-highlight-picker';
 import { SaveAudioButton } from '@/components/save-audio-button';
 import { WaveformPlayer } from '@/components/waveform-player';
 import { audioMp3Url, audioUrl } from '@/lib/api/client';
+import {
+  activePlaybackSource,
+  stopActivePlayback,
+  usePlaybackSource,
+} from '@/lib/audio/playback';
+import { requestPlaybackSeek, usePlaybackClock } from '@/lib/audio/playback-clock';
 import { clearLatestOutput, useLatestOutput } from '@/lib/store/output';
-import { activePlaybackSource, stopActivePlayback } from '@/lib/audio/playback';
-import { formatSeconds } from './format';
-import { AudioQuality } from './audio-quality';
+import { useReadingHighlightColors } from '@/lib/store/reading-highlight';
+import { cn } from '@/lib/utils';
 import { AudioFileDetails } from './audio-file-details';
+import { AudioQuality } from './audio-quality';
+import { formatSeconds } from './format';
 import { SectionLabel } from './section-label';
+
+interface TimedWord {
+  text: string;
+  start: number;
+  end: number;
+}
 
 export function OutputPanel() {
   const { t } = useTranslation();
   const { result, objectUrl, text } = useLatestOutput();
+  const playback = usePlaybackClock('output');
+  const activeSource = usePlaybackSource();
+  const { bgColor, textColor } = useReadingHighlightColors();
+  const scriptPaneRef = useRef<HTMLDivElement>(null);
+
+  const effectiveDuration = playback.duration || result?.durationSeconds || 0;
+  const words = useMemo(
+    () => (text ? (evenSplitWords(text, 0, effectiveDuration) as TimedWord[]) : []),
+    [effectiveDuration, text],
+  );
+  const isPlayingOutput = activeSource === 'output' || playback.time > 0;
+  const activeWord = isPlayingOutput ? activeWordIndex(words, playback.time) : -1;
+
+  useEffect(() => {
+    if (activeWord < 0) return;
+    scriptPaneRef.current
+      ?.querySelector<HTMLElement>('[data-active-word="true"]')
+      ?.scrollIntoView({ block: 'nearest' });
+  }, [activeWord]);
+
   if (!result || !objectUrl) return null;
 
   const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
@@ -31,13 +67,14 @@ export function OutputPanel() {
               <AudioLinesIcon aria-hidden="true" />
               {t('clone.output_title')}
             </SectionLabel>
-            {text && (
+            {text && words.length === 0 && (
               <p className="min-w-0 truncate text-sm text-muted-foreground" title={text}>
                 {text}
               </p>
             )}
           </div>
           <div className="flex shrink-0 items-center gap-1">
+            {words.length > 0 && <ReadingHighlightPicker compact />}
             <SaveAudioButton
               url={result.audioPath ? audioUrl(result.audioPath) : undefined}
               mp3Url={result.audioPath ? audioMp3Url(result.audioPath) : undefined}
@@ -60,6 +97,37 @@ export function OutputPanel() {
         {result && objectUrl ? (
           <>
             <WaveformPlayer key={objectUrl} src={playbackUrl} source="output" height={36} />
+            {words.length > 0 && (
+              <div
+                ref={scriptPaneRef}
+                role="region"
+                aria-label={t('clone.script')}
+                className="max-h-24 overflow-y-auto rounded-lg border border-border/50 bg-background/40 px-3 py-2 text-sm leading-relaxed text-muted-foreground"
+              >
+                {words.map((word, index) => {
+                  const active = index === activeWord;
+                  const spoken = activeWord >= 0 && index < activeWord;
+                  return (
+                    <span key={`${index}:${word.text}`}>
+                      <button
+                        type="button"
+                        data-active-word={active || undefined}
+                        aria-current={active ? 'true' : undefined}
+                        className={cn(
+                          'rounded px-0.5 text-left text-inherit outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring',
+                          spoken && 'text-foreground/75',
+                          active && 'font-semibold shadow-xs',
+                        )}
+                        style={active ? { backgroundColor: bgColor, color: textColor } : undefined}
+                        onClick={() => requestPlaybackSeek('output', word.start)}
+                      >
+                        {word.text}
+                      </button>{' '}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
             {/* One quiet line: length, render time, sample rate; full file facts on hover. */}
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
               <span className="tabular-nums">

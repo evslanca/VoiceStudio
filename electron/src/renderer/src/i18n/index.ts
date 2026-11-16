@@ -52,10 +52,10 @@ function initialLocale(): AppLocale {
   if (typeof navigator !== 'undefined') {
     for (const candidate of navigator.languages || [navigator.language]) {
       const locale = normalizeLocale(candidate);
-      if (locale) return locale;
+      if (locale && locale !== 'en') return locale;
     }
   }
-  return 'en';
+  return 'pt';
 }
 
 async function loadLocale(locale: AppLocale): Promise<void> {

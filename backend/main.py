@@ -825,13 +825,14 @@ def _phase_a_build_inner() -> None:
         auth as auth_router,
         voice_convert,  # Studio Convert: speech-to-speech via ASR → TTS
         sfx,  # Tools > Sound effects (#3577): opt-in MOSS-SoundEffect sidecar
+        music,  # Hybrid Music Studio: isolated ACE-Step 1.5 sidecar
     )
     from api.routers import mcp_bindings as _mcp_bindings_router  # noqa: E402
     from api.routers import telephony_twilio as _telephony_twilio_router  # noqa: E402
     from api.routers import calls as _calls_router  # noqa: E402
     from api.routers import cloud_sync as _cloud_sync_router  # noqa: E402
     _router_modules.extend([
-        system, profiles, profile_images, exports, generation, voice_convert, sfx, dub_core, dub_generate,
+        system, profiles, profile_images, exports, generation, voice_convert, sfx, music, dub_core, dub_generate,
         dub_export, dub_translate, projects, glossary, engines, tools,
         stories, setup, gallery, archetypes, describe_voice, community,
         batch, watermark, events, capture, capture_ws, speech_platform, dictation,
@@ -1504,6 +1505,12 @@ async def _application_lifespan(app: FastAPI):
         # a thread mid blocking call) so it can't outlive this shutdown block
         # holding a reference into module state that's about to be torn down.
         mm._reset_gpu_pool()
+    except Exception:
+        pass
+    # Close ACE-Step 1.5 sidecar if it was started by VoiceStudio
+    try:
+        from services import music_sidecar
+        music_sidecar.stop_sidecar()
     except Exception:
         pass
     # Run GC to release any remaining references
