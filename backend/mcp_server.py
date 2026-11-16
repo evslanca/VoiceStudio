@@ -790,10 +790,10 @@ def create_mcp_server(app=None):
     """
     FastMCP = _ensure_mcp()
     mcp = FastMCP(
-        "VoiceStudio",
+        "EliVoice",
         instructions=(
-            "AI-agent interface for VoiceStudio — voice cloning, "
-            "voice design, and video dubbing in 646 languages."
+            "AI-agent interface for EliVoice — music generation (ACE-Step 1.5), "
+            "voice cloning, voice design, transcription, dubbing, and batch workflows."
         ),
     )
     # Serve the Streamable-HTTP transport at the app root so mounting the whole
@@ -1260,6 +1260,116 @@ def create_mcp_server(app=None):
             "attrs": chosen_attrs,
             "unmatched": ignored_words,
         })
+
+    # ── Music Studio & Workspace Tools ──────────────────────────────────
+
+    @mcp.tool()
+    async def music_status() -> str:
+        """Check whether the Music Studio (ACE-Step 1.5) sidecar is installed, running, and healthy."""
+        info = await _api_get("/api/music/status")
+        return json.dumps(info)
+
+    @mcp.tool()
+    async def start_music_studio() -> str:
+        """Start the local Music Studio (ACE-Step 1.5) sidecar server."""
+        result = await _submit_json("/api/music/sidecar/start", {})
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def generate_music(
+        prompt: str,
+        lyrics: str = "",
+        title: str | None = None,
+        vocal_mode: str = "vocal",
+        vocal_gender: str = "auto",
+        vocal_language: str = "pt",
+        exclude_styles: str = "",
+        duration_seconds: float = 60.0,
+        bpm: int | None = None,
+        weirdness: int = 50,
+        style_influence: int = 50,
+        variety: int = 50,
+        max_mode: bool = False,
+        seed: int = -1,
+        audio_format: str = "mp3",
+    ) -> str:
+        """Queue a music generation job in EliVoice Music Studio (ACE-Step 1.5).
+
+        Returns a JSON object containing `task_id` and initial status. Poll progress
+        with `get_music_task(task_id)` until `status == 'succeeded'`.
+        """
+        payload: dict = {
+            "prompt": prompt,
+            "lyrics": lyrics,
+            "vocal_mode": vocal_mode if vocal_mode in ("vocal", "instrumental") else "vocal",
+            "vocal_gender": vocal_gender if vocal_gender in ("auto", "male", "female") else "auto",
+            "vocal_language": vocal_language or "pt",
+            "exclude_styles": exclude_styles,
+            "audio_duration": float(duration_seconds),
+            "weirdness": int(weirdness),
+            "style_influence": int(style_influence),
+            "variety": int(variety),
+            "max_mode": bool(max_mode),
+            "seed": int(seed),
+            "audio_format": audio_format if audio_format in ("mp3", "wav", "flac") else "mp3",
+        }
+        if title:
+            payload["title"] = title
+        if bpm is not None:
+            payload["bpm"] = int(bpm)
+        result = await _submit_json("/api/music/generate", payload)
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def get_music_task(task_id: str) -> str:
+        """Get the current status, progress text, and output audio URLs for a music task."""
+        from urllib.parse import quote
+        result = await _api_get(f"/api/music/tasks/{quote(task_id, safe='')}")
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def list_music_tracks(limit: int = 20) -> str:
+        """List recently generated tracks in the EliVoice Music Studio library."""
+        clamped = max(1, min(100, int(limit)))
+        result = await _api_get(f"/api/music/library?limit={clamped}")
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def separate_music_stems(audio_url: str, mode: str = "2stems") -> str:
+        """Separate vocals and instrumental stems for a generated music track URL.
+
+        `mode` must be one of `'2stems'`, `'4stems'`, or `'6stems'`.
+        """
+        valid_mode = mode if mode in ("2stems", "4stems", "6stems") else "2stems"
+        result = await _submit_json(
+            "/api/music/separate",
+            {"audio_url": audio_url, "mode": valid_mode},
+        )
+        return json.dumps(result)
+
+    @mcp.tool()
+    async def list_projects() -> str:
+        """List saved EliVoice dubbing projects."""
+        projects = await _api_get("/projects")
+        return json.dumps(projects)
+
+    @mcp.tool()
+    async def list_batch_jobs() -> str:
+        """List active and completed background batch dubbing jobs."""
+        jobs = await _api_get("/batch/jobs")
+        return json.dumps(jobs)
+
+    @mcp.resource("music://library")
+    async def get_music_library_resource() -> str:
+        """Get the 20 most recently generated EliVoice music tracks."""
+        result = await _api_get("/api/music/library?limit=20")
+        return json.dumps(result)
+
+    @mcp.resource("projects://all")
+    async def get_projects_resource() -> str:
+        """Get all saved EliVoice dubbing projects."""
+        projects = await _api_get("/projects")
+        return json.dumps(projects)
 
     return mcp
 
